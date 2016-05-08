@@ -7,7 +7,7 @@ export default class DataTable extends React.Component {
     return(
       <table className="table table-striped table-condensed table-bordered">
         <TableHeader/>
-        <TableBody/>
+        <TableBody data={this.props.data}/>
       </table>
     );
   }
