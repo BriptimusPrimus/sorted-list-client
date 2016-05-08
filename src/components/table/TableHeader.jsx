@@ -11,7 +11,7 @@ export default class TableHeader extends React.Component {
           <th className="text-center">Last seen on</th>
           <th className="text-center">Owner</th>
         </tr>
-      </thead>      
+      </thead>
     );
   }
 }
