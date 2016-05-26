@@ -5,31 +5,31 @@ import MainArea from './components/MainArea';
 
 const data = [
   {
-    name: 'Fido',
-    ageYears: 0,
-    agetMonths: 3,
-    status: 'lost',
-    lastSeenOn: '31/01/2015',
-    lastSeenWhere: 'Parque Guanal',
-    owner: 'camou'
+    id: '10027',
+    firstName: 'TERESA DE JESUS',
+    surname: 'JOFRE',
+    surname2: 'GARFIAS', 
+    codeNumber: '10027',
+    rfc: 'JOGT000101',
+    status: 'hired'
   },
   {
-    name: 'Connie',
-    ageYears: 2,
-    agetMonths: 5,
-    status: 'lost',
-    lastSeenOn: '16/01/2015',
-    lastSeenWhere: 'Blv. Park. 234',
-    owner: 'ppenchis'
+    id: '11542',
+    firstName: 'JUAN MANUEL',
+    surname: 'NAJERA',
+    surname2: 'PEREZ', 
+    codeNumber: '11542',
+    rfc: 'NAPJ701211',
+    status: 'hired'
   },
   {
-    name: 'Donatello',
-    ageYears: 0,
-    agetMonths: 9,
-    status: 'lost',
-    lastSeenOn: 'Donatello',
-    lastSeenWhere: 'The backyard',
-    owner: 'rushysts'
+    id: '42837',
+    firstName: 'MARCOS',
+    surname: 'ZARATE',
+    surname2: 'MARIN', 
+    codeNumber: '42837',
+    rfc: 'ZAMM570504',
+    status: 'hired'
   }
 ];
 

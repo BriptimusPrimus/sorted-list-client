@@ -10,7 +10,7 @@ export default class TableBody extends React.Component {
     return(
       <tbody>
         {this.getData().map(row =>
-          <TableRow key={row.name} row={row} />
+          <TableRow key={row.id} row={row} />
         )}
       </tbody>      
     );

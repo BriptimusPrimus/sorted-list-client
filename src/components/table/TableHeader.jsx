@@ -6,10 +6,10 @@ export default class TableHeader extends React.Component {
       <thead>
         <tr>
           <th className="text-center">Name</th>
-          <th className="text-center">Age</th>
+          <th className="text-center">Surname</th>
+          <th className="text-center">Code Number</th>
+          <th className="text-center">RFC</th>
           <th className="text-center">Status</th>
-          <th className="text-center">Last seen on</th>
-          <th className="text-center">Owner</th>
         </tr>
       </thead>
     );

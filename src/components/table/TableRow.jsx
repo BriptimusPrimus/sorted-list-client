@@ -12,19 +12,19 @@ export default class TableRow extends React.Component {
     return(
       <tr>
         <td className="text-center">
-          {record.name}
+          {record.firstName}
         </td>
         <td className="text-center">
-          {record.ageYears} Years, {record.ageMonths} Months
+          {record.surname}-{record.surname2}
+        </td>
+        <td className="text-center">
+          {record.codeNumber}
+        </td>
+        <td className="text-center">
+          {record.rfc}
         </td>
         <td className="text-center">
           {this.capitalizeFirstLetter(record.status)}
-        </td>
-        <td className="text-center">
-          Last seen on {record.lastSeenOn} At {record.lastSeenWhere}
-        </td>
-        <td className="text-center">
-          {record.owner}
         </td>
       </tr>
     );
