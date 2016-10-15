@@ -40,11 +40,11 @@ describe('<TableBody/>', () => {
     expect(wrapper.type()).to.equal('tbody');
   });
 
-  it('should contain 3 table rows', () => {
+  it('should have 3 table rows', () => {
     expect(wrapper.find(TableRow)).to.have.length(3);
   });
 
-  it('should not contain rows when no properties are passed', () => {
+  it('should not have rows when no props are passed', () => {
     const noRowsWrapper = shallow(<TableBody/>);
     expect(noRowsWrapper.find(TableRow)).to.have.length(0);
   });    
