@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha --compilers js:babel-register --require ./test/helpers/init.js test/*.js",
+    "test": "mocha --compilers js:babel-register --require ./test/helpers/init.js --recursive",
     "test:watch": "npm test -- --watch"
   },
   "repository": {
