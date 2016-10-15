@@ -3,7 +3,7 @@ import TableRow from './TableRow';
 
 export default class TableBody extends React.Component {
   getData() {
-    return this.props.data;
+    return this.props.data || [];
   }
 
   render() {

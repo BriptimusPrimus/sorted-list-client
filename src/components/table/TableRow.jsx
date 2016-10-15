@@ -5,6 +5,9 @@ export default class TableRow extends React.Component {
     return this.props.row || {};
   }
   capitalizeFirstLetter(str) {
+    if (!str) {
+      return '';
+    }
     return str[0].toUpperCase() + str.slice(1);
   }
   render() {
