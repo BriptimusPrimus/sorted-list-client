@@ -1,1 +1,7 @@
-{}
+{
+  "database": {
+    "module": "mocks/mockdb",
+    "file": "employees.json",
+    "mockResponseDelay": 1000
+  }
+}

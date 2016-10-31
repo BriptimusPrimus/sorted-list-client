@@ -3,6 +3,7 @@
  */
 
 var express = require('express');
+var employeesController = require('../controllers/employees');
 
 var router = express.Router();
 
@@ -13,5 +14,7 @@ router.get('/', function(req, res) {
     data: 'Hello World!'
   })
 });
+
+router.get('/employees', employeesController.getList);
 
 module.exports = router;
