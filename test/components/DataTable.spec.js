@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DataTable from '../../src/components/table/DataTable';
-import TableHeader from '../../src/components/table/TableHeader';
-import TableBody from '../../src/components/table/TableBody';
+import DataTable from '../../client/components/table/DataTable';
+import TableHeader from '../../client/components/table/TableHeader';
+import TableBody from '../../client/components/table/TableBody';
 
 describe('<DataTable/>', () => {
   const wrapper = shallow(<DataTable/>);

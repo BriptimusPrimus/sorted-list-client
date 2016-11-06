@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TableHeader from '../../src/components/table/TableHeader';
+import TableHeader from '../../client/components/table/TableHeader';
 
 describe('<TableHeader/>', () => {
   const wrapper = shallow(<TableHeader/>);
