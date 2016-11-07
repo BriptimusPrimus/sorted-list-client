@@ -8,7 +8,7 @@ var dal = require('./' + implementationModule);
 function getEmployees(opts, callback) {
   opts.count = isNaN(Number(opts.count)) ?
     20 : Number(opts.count);
-  opts.page = isNaN(Number(opts.page)) ?
+  opts.page = isNaN(Number(opts.page)) || opts.page < 1 ?
     1 : Number(opts.page);
   opts.sortBy = opts.sortBy;
   opts.order = opts.order || 'ASC';

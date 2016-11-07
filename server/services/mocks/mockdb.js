@@ -25,6 +25,9 @@ function sort(rows, opts) {
   }
 
   var sortBy = mapFields()[opts.sortBy];
+  if (!sortBy) {
+    return;
+  }
 
   var ord = 1;
   if (opts.order === 'DESC') {
