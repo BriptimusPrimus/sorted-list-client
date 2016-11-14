@@ -3,8 +3,8 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 import DataSection from './MainArea';
 
 const MainView = (props) => {
-  const data = props.dummyData || {};
-  const rows = data.rows || [];
+  const data = props.data || {};
+  const rows = data.list || [];
   return(
     <div id="main-view">
       <DataSection data={rows}/>

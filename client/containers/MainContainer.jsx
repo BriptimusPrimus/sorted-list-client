@@ -3,7 +3,8 @@ import MainView from '../components/MainView';
 
 const mapStateToProps = (state) => {
   return {
-    dummyData: state.dummyData
+    dummyData: state.dummyData,
+    data: state.data
   }
 }
 

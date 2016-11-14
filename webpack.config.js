@@ -8,6 +8,10 @@ var loaders = [
     loader: 'react-hot!babel'
   },
   {
+    test: /\.json$/,
+    loader: 'json'    
+  },
+  {
     test: /\.css$/,
     loader: 'style-loader!css-loader'
   },

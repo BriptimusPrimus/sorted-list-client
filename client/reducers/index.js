@@ -1,3 +1,7 @@
+import {
+  RECEIVE_DATA
+} from '../actions';
+
 const initialState = {
   dummyData: {
     rows: [
@@ -29,6 +33,9 @@ const initialState = {
         status: 'hired'
       }
     ]    
+  },
+  data: {
+    list: []
   }
 }
 
@@ -36,8 +43,18 @@ function dummyData(state={}, action) {
   return state;
 }
 
+function data(state=initialState.data, action) {
+  switch (action.type) {
+    case RECEIVE_DATA:
+      return action.data
+    default:
+      return state
+  }
+}
+
 export default function reducer(state = initialState, action) {
   return {
-    dummyData: dummyData(state.dummyData, action)
+    dummyData: dummyData(state.dummyData, action),
+    data: data(state.data, action)
   }
 }
