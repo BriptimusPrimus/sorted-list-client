@@ -62,7 +62,7 @@ function postRequest(enpoint, data) {
             error: 'Service Failure',
             status: response.status
           }
-        }        
+        }
         return response.json();
       })
       .then(function(data) {

@@ -1,5 +1,6 @@
 import {
-  RECEIVE_DATA
+  RECEIVE_DATA,
+  SORT_BY_COLUMN
 } from '../actions';
 
 const initialState = {
@@ -36,6 +37,10 @@ const initialState = {
   },
   data: {
     list: []
+  },
+  sortBy: {
+    column: 'name',
+    orderDesc: true
   }
 }
 
@@ -52,9 +57,25 @@ function data(state=initialState.data, action) {
   }
 }
 
+function sortBy(state=initialState.sortBy, action) {
+  var isDesc;
+  switch (action.type) {
+    case SORT_BY_COLUMN:
+      isDesc = action.column === state.column ?
+        !state.orderDesc : true;
+      return {
+        column: action.column,
+        orderDesc: isDesc
+      };
+    default:
+      return state;
+  }
+}
+
 export default function reducer(state = initialState, action) {
   return {
     dummyData: dummyData(state.dummyData, action),
-    data: data(state.data, action)
+    data: data(state.data, action),
+    sortBy: sortBy(state.sortBy, action)
   }
 }
