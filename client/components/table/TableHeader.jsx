@@ -14,7 +14,7 @@ export default class TableHeader extends React.Component {
 
     function onHeaderClick(column) {
       if (typeof onSetSortColumn === 'function') {
-        onSetSortColumn(column);
+        onSetSortColumn(column, !sortBy.orderDesc);
       }
     }
 
@@ -28,8 +28,8 @@ export default class TableHeader extends React.Component {
             Name
           </th>
           <th
-            className={setColumnSortClass('surName')}
-            onClick={() => onHeaderClick('surName')}
+            className={setColumnSortClass('surname')}
+            onClick={() => onHeaderClick('surname')}
           >
             Surname
           </th>

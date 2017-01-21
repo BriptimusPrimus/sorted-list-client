@@ -36,6 +36,11 @@ module.exports = function init(app) {
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
+    console.log('');
+    console.log('*********************************');
+    console.log('req.url:', req.url);
+    console.log('*********************************');
+    console.log('');
     var err = new Error('Not Found');
     err.status = 404;
     next(err);

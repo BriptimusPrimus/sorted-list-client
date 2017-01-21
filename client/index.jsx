@@ -26,7 +26,10 @@ ReactDOM.render(
 export default true;
 
 // trigger initial request to the server
-dataService.getEmployees()
+const fetchOpts = {
+  sortBy: store.getState().sortBy
+}
+dataService.getEmployees(fetchOpts)
   .then(function fullfilled(data) {
     store.dispatch(receiveData(data));
     console.log('state:', store.getState());

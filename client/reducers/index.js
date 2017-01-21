@@ -39,8 +39,8 @@ const initialState = {
     list: []
   },
   sortBy: {
-    column: 'name',
-    orderDesc: true
+    column: 'code',
+    orderDesc: false
   }
 }
 

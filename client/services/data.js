@@ -1,4 +1,5 @@
 import config from '../../config';
+import querystring from 'querystring';
 
 const apiEndpoint = config.data_service.api.protocol + '://'
   + config.data_service.api.host + ':'
@@ -85,10 +86,32 @@ function postRequest(enpoint, data) {
 
 }
 
-function getEmployees() {
+function mapFields() {
+  return {
+    'name': 'firstName',
+    'surname': 'surname',
+    'code': 'codeNumber',
+    'rfc': 'rfc',
+    'status': 'status'
+  }
+}
+
+function getEmployees(options) {
+  options = options || {};
+  options.sortBy = options.sortBy || {};
+  options.sortBy.column = options.sortBy.column || 'name';
+  const filedMapper = mapFields();
+  const params = {
+    count: options.count || config.data_service.defaulCount,
+    sort: filedMapper[options.sortBy.column],
+    order: options.sortBy.orderDesc ? 'DESC' : 'ASC'
+  }
+
   const endpoint = apiEndpoint
     + config.data_service.api.employees_data +
-    '?count=' + config.data_service.defaulCount;
+    '?' + querystring.stringify(params);
+
+  console.log('GET REQUEST TO:', endpoint);
 
   return getRequest(endpoint);
 }
