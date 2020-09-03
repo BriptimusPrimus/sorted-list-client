@@ -13,9 +13,9 @@ export default class TableHeader extends React.Component {
     }
 
     function onHeaderClick(column) {
-      if (typeof onSetSortColumn === 'function') {
-        onSetSortColumn(column, !sortBy.orderDesc);
-      }
+      var orderDesc = column === sortBy.column ?
+        !sortBy.orderDesc : true;
+      onSetSortColumn(column, orderDesc);
     }
 
     return(

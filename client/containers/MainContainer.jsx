@@ -14,7 +14,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onSetSortColumn: (column, orderDesc) => {
-      console.log('mapDispatchToProps::ownProps:', ownProps);
       const fetchOpts = {
         sortBy: {
           column,
