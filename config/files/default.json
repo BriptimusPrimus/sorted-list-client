@@ -1,0 +1,12 @@
+{
+  "data_service": {
+    "api": {
+      "protocol": "http",
+      "host": "localhost",
+      "port": "3000",
+      "root": "api",
+      "employees_data": "employees"
+    },
+    "defaulCount": 10
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TableRow from '../../src/components/table/TableRow';
+import TableRow from '../../client/components/table/TableRow';
 
 describe('<TableRow/>', () => {
   const row = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TableBody from '../../src/components/table/TableBody';
-import TableRow from '../../src/components/table/TableRow';
+import TableBody from '../../client/components/table/TableBody';
+import TableRow from '../../client/components/table/TableRow';
 
 describe('<TableBody/>', () => {
   const data = [
