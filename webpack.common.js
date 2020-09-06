@@ -1,14 +1,15 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry:  {
     main: './client'
   },
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, 'dist')    
+    filename: '[name].bundle.js',
+    path: path.join(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -64,6 +65,10 @@ module.exports = {
   // },
   plugins: [
     new CleanWebpackPlugin(),
+    new HtmlWebPackPlugin({
+        template: './templates/index.html',
+        filename: './index.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
