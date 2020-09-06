@@ -8,20 +8,25 @@ module.exports = {
     main: './client'
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.join(__dirname, 'dist')
+    filename: '[name].[hash].js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, 'client'),
         use: {
           loader: 'babel-loader'
         }
       },
       {
         test: /\.css$/,
+        include: [
+          path.resolve(__dirname, 'node_modules/bootstrap'),
+          path.resolve(__dirname, 'client'),
+        ],
+        sideEffects: true,
         use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
@@ -30,7 +35,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 10000,
-            name: './fonts/[name].[ext]'
+            name: './img/[name].[ext]'
           }
         }
       },
@@ -49,20 +54,20 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },
-  // optimization: {
-  //   moduleIds: 'hashed',
-  //   runtimeChunk: 'single',
-  //   splitChunks: {
-  //     chunks: 'all',
-  //     cacheGroups: {
-  //       vendor: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         name: 'vendors',
-  //         chunks: 'all'
-  //       }
-  //     }
-  //   }
-  // },
+  optimization: {
+    moduleIds: 'hashed',
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
@@ -70,8 +75,8 @@ module.exports = {
         filename: './index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css'
     })
   ]
 };
