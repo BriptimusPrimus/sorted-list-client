@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "build": "webpack --env production",
-    "dev": "node . & webpack-dev-server --open --env development --progress --color",
-    "dev:client": "webpack-dev-server --open --env development --progress --color",
-    "mock": "NODE_ENV=test node . && webpack-dev-server --open --env development --progress --color",
+    "dev": "node . & webpack-dev-server --env development --color",
+    "dev:client": "webpack-dev-server --env development --color",
+    "mock": "NODE_ENV=test node . && webpack-dev-server --env development --color",
     "test": "mocha --compilers js:babel-register --require ./test/helpers/init.js --recursive",
     "test:watch": "npm test -- --watch"
   },
