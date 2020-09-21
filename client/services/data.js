@@ -6,87 +6,58 @@ const apiEndpoint = config.data_service.api.protocol + '://'
   + config.data_service.api.port + '/'
   + config.data_service.api.root + '/';
 
-function getRequest(endpoint) {
-  function makeRequest(resolve, reject) {
-    const requestConf = {
-      method: 'GET',
-      mode: 'cors',
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      })
+const getRequest = async function getRequest1(endpoint) {
+  const requestConf = {
+    method: 'GET',
+    mode: 'cors',
+    headers: new Headers({
+      'Content-Type': 'application/json'
+    })
+  };
+  
+  const response = await fetch(endpoint, requestConf);
+  if (response.status !== 200) {
+    return {
+      error: 'Service Failure',
+      status: response.status
     }
-
-    fetch(endpoint, requestConf)
-      .then(function(response) {
-        if (response.status !== 200) {
-          return {
-            error: 'Service Failure',
-            status: response.status
-          }
-        }
-        return response.json();
-      })
-      .then(function(data) {
-        if(data.error) {
-          reject(data);
-        } else {
-          resolve(data);
-        }
-      })
-      .catch(function(reason) {
-        reject({
-          error: 'Service Failure'
-        });
-      });
+  }
+  
+  const data = await response.json();
+  if (data.error) {
+    throw new Error(data);
   }
 
-  return new Promise(function(resolve, reject) {
-    makeRequest(resolve, reject);
-  });
+  return data;
 }
 
-function postRequest(enpoint, data) {
-  function makeRequest(resolve, reject) {
-    const requestConf = {
-      method: 'POST',
-      mode: 'cors',
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      }),
-      body: JSON.stringify(data)
-    }
-
-    fetch(endpoint, requestConf)
-      .then(function(response) {
-        if (response.status !== 200) {
-          return {
-            error: 'Service Failure',
-            status: response.status
-          }
-        }
-        return response.json();
-      })
-      .then(function(data) {
-        if(data.error) {
-          reject(data);
-        } else {
-          resolve(data);
-        }
-      })
-      .catch(function(reason) {
-        reject({
-          error: 'Service Failure'
-        });
-      });
+const postRequest = async function postRequest(enpoint) {
+  const requestConf = {
+    method: 'POST',
+    mode: 'cors',
+    headers: new Headers({
+      'Content-Type': 'application/json'
+    }),
+    body: JSON.stringify(data)
   }
 
-  return new Promise(function(resolve, reject) {
-    makeRequest(resolve, reject);
-  });
+  const response = await fetch(endpoint, requestConf);
+  if (response.status !== 200) {
+    return {
+      error: 'Service Failure',
+      status: response.status
+    }
+  }
 
+  const data = await response.json;
+  if (data.error) {
+    throw new Error(data);
+  }
+
+  return data;
 }
 
-function mapFields() {
+const mapFields = function mapFields() {
   return {
     'name': 'firstName',
     'surname': 'surname',
@@ -96,14 +67,14 @@ function mapFields() {
   }
 }
 
-function getEmployees(options) {
+const getEmployees = function getEmployees(options) {
   options = options || {};
   options.sortBy = options.sortBy || {};
   options.sortBy.column = options.sortBy.column || 'name';
-  const filedMapper = mapFields();
+  const fieldMapper = mapFields();
   const params = {
     count: options.count || config.data_service.defaulCount,
-    sort: filedMapper[options.sortBy.column],
+    sort: fieldMapper[options.sortBy.column],
     order: options.sortBy.orderDesc ? 'DESC' : 'ASC'
   }
 
@@ -116,6 +87,6 @@ function getEmployees(options) {
   return getRequest(endpoint);
 }
 
-export default {
+export {
   getEmployees
 }

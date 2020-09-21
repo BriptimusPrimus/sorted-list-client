@@ -9,9 +9,9 @@ import { createStore } from 'redux';
 
 import reducer from './reducers';
 import {receiveData} from './actions';
-import dataService from './services/data';
+import * as dataService from './services/data';
 
-let store = createStore(reducer);
+const store = createStore(reducer);
 
 console.log('INITIATE APP');
 

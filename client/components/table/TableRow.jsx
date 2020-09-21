@@ -1,18 +1,12 @@
 import React from 'react';
 
-const TableRow = (props) => {
-  function getRecord() {
-    return props.row || {};
-  }
-
-  function capitalizeFirstLetter(str) {
-    if (!str) {
+const TableRow = ({ record={} }) => {
+  const capitalizeFirstLetter = function capitalizeFirstLetter(str) {
+    if (!str || str.length < 1) {
       return '';
     }
     return str[0].toUpperCase() + str.slice(1);
   }
-
-  const record = getRecord();
 
   return(
     <tr>

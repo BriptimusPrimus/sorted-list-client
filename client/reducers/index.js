@@ -44,11 +44,11 @@ const initialState = {
   }
 }
 
-function dummyData(state={}, action) {
+const dummyData = function dummyData(state={}, action) {
   return state;
 }
 
-function data(state=initialState.data, action) {
+const data = function data(state=initialState.data, action) {
   switch (action.type) {
     case RECEIVE_DATA:
       return action.data
@@ -57,7 +57,7 @@ function data(state=initialState.data, action) {
   }
 }
 
-function sortBy(state=initialState.sortBy, action) {
+const sortBy = function sortBy(state=initialState.sortBy, action) {
   var isDesc;
   switch (action.type) {
     case SORT_BY_COLUMN:
@@ -72,10 +72,12 @@ function sortBy(state=initialState.sortBy, action) {
   }
 }
 
-export default function reducer(state = initialState, action) {
+const reducer = function reducer(state = initialState, action) {
   return {
     dummyData: dummyData(state.dummyData, action),
     data: data(state.data, action),
     sortBy: sortBy(state.sortBy, action)
   }
 }
+
+export default reducer;

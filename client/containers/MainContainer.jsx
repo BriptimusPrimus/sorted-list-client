@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import MainView from '../components/MainView';
 import {sortByColumn, receiveData} from '../actions';
-import dataService from '../services/data';
+import { getEmployees } from '../services/data';
 
 const mapStateToProps = (state) => {
   return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
   };
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onSetSortColumn: (column, orderDesc) => {
       const fetchOpts = {
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
           orderDesc
         }
       };
-      dataService.getEmployees(fetchOpts)
+      getEmployees(fetchOpts)
         .then(function fullfilled(data) {
           dispatch(sortByColumn(column));
           dispatch(receiveData(data));
