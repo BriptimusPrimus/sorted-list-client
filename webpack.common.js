@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         include: path.resolve(__dirname, 'client'),
         use: {
           loader: 'babel-loader'
@@ -57,9 +57,6 @@ module.exports = {
         }
       }
     ]
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.json']
   },
   plugins: [
     new CleanWebpackPlugin(),
