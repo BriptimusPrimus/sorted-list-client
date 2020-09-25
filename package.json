@@ -10,7 +10,7 @@
     "dev:client": "webpack-dev-server --env development --color",
     "mock": "NODE_ENV=test node . && webpack-dev-server --env development --color",
     "mock:server": "NODE_ENV=test node .",
-    "test": "mocha --compilers js:babel-register --require ./test/helpers/init.js --recursive",
+    "test": "mocha --compilers js:babel-register --require ./test-old/helpers/init.js --recursive",
     "test:watch": "npm test -- --watch"
   },
   "repository": {
