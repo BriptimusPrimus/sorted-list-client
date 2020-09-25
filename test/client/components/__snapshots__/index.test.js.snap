@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App tests Renders 1`] = `
+<div
+  data-reactroot=""
+  id="main-view"
+>
+  <div
+    class="panel panel-default row"
+  >
+    <div
+      class="col-xs-0 col-sm-1 col-md-2"
+    />
+    <section
+      class="col-xs-12 col-sm-10 col-md-8"
+    >
+      <h2
+        class="text-primary text-center"
+      >
+        Sorted List with Data
+      </h2>
+      <div
+        class="well"
+      >
+        <table
+          class="table table-striped table-condensed table-bordered"
+        >
+          <thead>
+            <tr>
+              <th
+                class="text-center actionable"
+              >
+                Name
+              </th>
+              <th
+                class="text-center actionable"
+              >
+                Surname
+              </th>
+              <th
+                class="text-center actionable order-asc"
+              >
+                Code Number
+              </th>
+              <th
+                class="text-center actionable"
+              >
+                RFC
+              </th>
+              <th
+                class="text-center actionable"
+              >
+                Status
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class="text-center"
+              >
+                TERESA DE JESUS
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 19 -->
+                JOFRE
+                <!-- /react-text -->
+                <!-- react-text: 20 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 21 -->
+                GARFIAS
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                10027
+              </td>
+              <td
+                class="text-center"
+              >
+                JOGT000101
+              </td>
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                JUAN MANUEL
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 28 -->
+                NAJERA
+                <!-- /react-text -->
+                <!-- react-text: 29 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 30 -->
+                PEREZ
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                11542
+              </td>
+              <td
+                class="text-center"
+              >
+                NAPJ701211
+              </td>
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                MARCOS
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 37 -->
+                ZARATE
+                <!-- /react-text -->
+                <!-- react-text: 38 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 39 -->
+                MARIN
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                42837
+              </td>
+              <td
+                class="text-center"
+              >
+                ZAMM570504
+              </td>
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <div
+      class="col-xs-0 col-sm-1 col-md-2"
+    />
+  </div>
+</div>
+`;

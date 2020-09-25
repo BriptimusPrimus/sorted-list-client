@@ -10,8 +10,8 @@
     "dev:client": "webpack-dev-server --env development --color",
     "mock": "NODE_ENV=test node . && webpack-dev-server --env development --color",
     "mock:server": "NODE_ENV=test node .",
-    "test": "mocha --compilers js:babel-register --require ./test-old/helpers/init.js --recursive",
-    "test:watch": "npm test -- --watch"
+    "test": "jest --coverage",
+    "test:old": "mocha --compilers js:babel-register --require ./test-old/helpers/init.js --recursive"
   },
   "repository": {
     "type": "git",
@@ -44,6 +44,7 @@
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@testing-library/react": "^11.0.4",
     "babel-loader": "^8.1.0",
     "chai": "^3.5.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -51,6 +52,8 @@
     "enzyme": "^2.4.1",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.4.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.4.2",
     "jsdom": "^9.7.1",
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^0.11.0",
