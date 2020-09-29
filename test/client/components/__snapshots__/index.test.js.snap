@@ -59,18 +59,51 @@ exports[`App tests Renders 1`] = `
               <td
                 class="text-center"
               >
-                TERESA DE JESUS
+                ELOINA
               </td>
               <td
                 class="text-center"
               >
                 <!-- react-text: 19 -->
-                JOFRE
+                SALINAS
                 <!-- /react-text -->
                 <!-- react-text: 20 -->
                 -
                 <!-- /react-text -->
                 <!-- react-text: 21 -->
+                VAZQUEZ
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                10001
+              </td>
+              <td
+                class="text-center"
+              />
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                TERESA DE JESUS
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 28 -->
+                JOFRE
+                <!-- /react-text -->
+                <!-- react-text: 29 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 30 -->
                 GARFIAS
                 <!-- /react-text -->
               </td>
@@ -86,73 +119,281 @@ exports[`App tests Renders 1`] = `
               </td>
               <td
                 class="text-center"
-              >
-                Hired
-              </td>
+              />
             </tr>
             <tr>
               <td
                 class="text-center"
               >
-                JUAN MANUEL
-              </td>
-              <td
-                class="text-center"
-              >
-                <!-- react-text: 28 -->
-                NAJERA
-                <!-- /react-text -->
-                <!-- react-text: 29 -->
-                -
-                <!-- /react-text -->
-                <!-- react-text: 30 -->
-                PEREZ
-                <!-- /react-text -->
-              </td>
-              <td
-                class="text-center"
-              >
-                11542
-              </td>
-              <td
-                class="text-center"
-              >
-                NAPJ701211
-              </td>
-              <td
-                class="text-center"
-              >
-                Hired
-              </td>
-            </tr>
-            <tr>
-              <td
-                class="text-center"
-              >
-                MARCOS
+                JOSE LUIS
               </td>
               <td
                 class="text-center"
               >
                 <!-- react-text: 37 -->
-                ZARATE
+                JAVIER
                 <!-- /react-text -->
                 <!-- react-text: 38 -->
                 -
                 <!-- /react-text -->
                 <!-- react-text: 39 -->
-                MARIN
+                PECH
                 <!-- /react-text -->
               </td>
               <td
                 class="text-center"
               >
-                42837
+                10030
               </td>
               <td
                 class="text-center"
               >
-                ZAMM570504
+                JAPL740105
+              </td>
+              <td
+                class="text-center"
+              >
+                Candidate
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                ERNESTO
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 46 -->
+                HERNANDEZ
+                <!-- /react-text -->
+                <!-- react-text: 47 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 48 -->
+                GARCIA
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                10031
+              </td>
+              <td
+                class="text-center"
+              >
+                HEGE521107
+              </td>
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                SERGIO
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 55 -->
+                FONSECA
+                <!-- /react-text -->
+                <!-- react-text: 56 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 57 -->
+                VIDAL
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                10137
+              </td>
+              <td
+                class="text-center"
+              >
+                FOVS820331
+              </td>
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                PEDRO ANTONIO
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 64 -->
+                JIMENEZ
+                <!-- /react-text -->
+                <!-- react-text: 65 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 66 -->
+                JIMENEZ
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                10155
+              </td>
+              <td
+                class="text-center"
+              >
+                JIJP770117
+              </td>
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                EFREN
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 73 -->
+                GONZALEZ
+                <!-- /react-text -->
+                <!-- react-text: 74 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 75 -->
+                CHAVEZ
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                10223
+              </td>
+              <td
+                class="text-center"
+              >
+                GOCE690929
+              </td>
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                FRANCISCO
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 82 -->
+                JIMENEZ
+                <!-- /react-text -->
+                <!-- react-text: 83 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 84 -->
+                RODRIGUEZ
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                10337
+              </td>
+              <td
+                class="text-center"
+              >
+                JIRF651124
+              </td>
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                MANUEL
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 91 -->
+                VALDERRABANO
+                <!-- /react-text -->
+                <!-- react-text: 92 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 93 -->
+                TACU
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                10369
+              </td>
+              <td
+                class="text-center"
+              >
+                VATM701227
+              </td>
+              <td
+                class="text-center"
+              >
+                Hired
+              </td>
+            </tr>
+            <tr>
+              <td
+                class="text-center"
+              >
+                LUIS RAMON
+              </td>
+              <td
+                class="text-center"
+              >
+                <!-- react-text: 100 -->
+                PERALTA
+                <!-- /react-text -->
+                <!-- react-text: 101 -->
+                -
+                <!-- /react-text -->
+                <!-- react-text: 102 -->
+                MAY
+                <!-- /react-text -->
+              </td>
+              <td
+                class="text-center"
+              >
+                10370
+              </td>
+              <td
+                class="text-center"
+              >
+                PEML740831
               </td>
               <td
                 class="text-center"

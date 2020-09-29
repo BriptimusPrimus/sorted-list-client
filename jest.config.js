@@ -7,7 +7,12 @@ module.exports = {
     testMatch: ['**/test/client/**/*.test.js'],
     setupFiles: ['<rootDir>test/setup-tests.js'],
     collectCoverage: true,
-    collectCoverageFrom: ['client/**/*.js', '!client/index.js', '!client/routes.js'],
+    collectCoverageFrom: [
+        'client/**/*.js',
+        '!client/index.js',
+        '!client/routes.js',
+        '!client/services/**'
+    ],
     coverageDirectory: './coverage',
     coverageReporters: ['cobertura', 'text', 'lcov'],
     coverageThreshold: {
