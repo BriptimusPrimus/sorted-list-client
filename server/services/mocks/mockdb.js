@@ -86,6 +86,11 @@ function extractChunk(rows, opts) {
 }
 
 function getEmployees(opts, callback) {
+  // Test failure scenario
+  if (opts.sortBy === 'forceServiceError') {
+    return callback('Mock DAL error');
+  }
+
   var chunk;
   readFromFile(onRead);
 

@@ -6,16 +6,18 @@ module.exports = {
         'server/**/*.js',
         '!client/index.js',
         '!client/routes.js',
-        '!client/services/**'
+        '!client/services/**',
+        '!server/services/**',
+        '!server/middleware/**'
     ],
     coverageDirectory: './coverage',
     coverageReporters: ['cobertura', 'text', 'lcov'],
     coverageThreshold: {
       global: {
-        statements: 30,
-        branches: 20,
-        functions: 50,
-        lines: 30
+        statements: 90,
+        branches: 65,
+        functions: 90,
+        lines: 90
       }
     },
     projects: ['jest.server.config.js', 'jest.client.config.js']
