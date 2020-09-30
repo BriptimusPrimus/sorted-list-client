@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, fireEvent, waitFor } from '@testing-library/react';
 import { renderWithRedux } from '../utils/renderWrappers';
-import App from '../../../src/client/components/index';
+import MainContainer from '../../../src/client/containers/MainContainer';
 import * as mockService from '../../../src/client/services/data';
 import { 
     sortedByName,
@@ -13,7 +13,7 @@ import {
 
 jest.mock('../../../src/client/services/data');
 
-describe('App tests', () => {
+describe('MainContainer tests', () => {
     beforeEach(() => {
         jest.clearAllMocks();
     });
@@ -21,7 +21,7 @@ describe('App tests', () => {
     afterEach(cleanup);
 
     test('Renders', () => {
-        const { container } = renderWithRedux(<App />);
+        const { container } = renderWithRedux(<MainContainer />);
         expect(container.firstChild).not.toBeNull();
         expect(container.firstChild).toMatchSnapshot();
     });
@@ -31,7 +31,7 @@ describe('App tests', () => {
             return sortedByName
         });
 
-        const { getByText, queryByText } = renderWithRedux(<App />);
+        const { getByText, queryByText } = renderWithRedux(<MainContainer />);
         expect(queryByText('ELOINA')).not.toBeNull();
 
         const nameHeader = getByText('Name');
@@ -49,7 +49,7 @@ describe('App tests', () => {
             return Promise.reject(new Error('boom'));
         });
 
-        const { getByText, queryByText } = renderWithRedux(<App />);
+        const { getByText, queryByText } = renderWithRedux(<MainContainer />);
         expect(queryByText('ELOINA')).not.toBeNull();
 
         const nameHeader = getByText('Name');
@@ -67,7 +67,7 @@ describe('App tests', () => {
             return sortedBySurname
         });
 
-        const { getByText, queryByText } = renderWithRedux(<App />);
+        const { getByText, queryByText } = renderWithRedux(<MainContainer />);
         expect(queryByText('SALINAS-VAZQUEZ')).not.toBeNull();
 
         const nameHeader = getByText('Surname');
@@ -85,7 +85,7 @@ describe('App tests', () => {
             return sortedByCodeNumberAsc
         });
 
-        const { getByText, queryByText } = renderWithRedux(<App />);
+        const { getByText, queryByText } = renderWithRedux(<MainContainer />);
         expect(queryByText('10001')).not.toBeNull();
 
         const nameHeader = getByText('Code Number');
@@ -103,7 +103,7 @@ describe('App tests', () => {
             return sortedByRFC
         });
 
-        const { getByText, queryByText } = renderWithRedux(<App />);
+        const { getByText, queryByText } = renderWithRedux(<MainContainer />);
         expect(queryByText('LUIS RAMON')).not.toBeNull();
 
         const nameHeader = getByText('RFC');
@@ -121,7 +121,7 @@ describe('App tests', () => {
             return sortedByStatus
         });
 
-        const { getByText, queryByText } = renderWithRedux(<App />);
+        const { getByText, queryByText } = renderWithRedux(<MainContainer />);
         expect(queryByText('Candidate')).not.toBeNull();
 
         const nameHeader = getByText('Status');

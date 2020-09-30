@@ -1,9 +1,17 @@
 import React from 'react';
+import {
+  Switch,
+  Route,
+} from "react-router-dom";
 import MainContainer from '../containers/MainContainer'
 
 const App = () => {
-  return(
-    <MainContainer/>
+  return (
+    <Switch>
+      <Route path="/">
+        <MainContainer />
+      </Route>
+    </Switch>
   );
 }
 

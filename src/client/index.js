@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Router, browserHistory } from 'react-router';
-import routes from './routes';
-
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { BrowserRouter } from "react-router-dom";
+import App from './components/';
 
 import reducer from './reducers';
 import {receiveData} from './actions';
@@ -13,12 +12,11 @@ import * as dataService from './services/data';
 
 const store = createStore(reducer);
 
-console.log('INITIATE APP');
-
-// Render app
 ReactDOM.render(
   <Provider store={store}>
-    <Router children={routes} history={browserHistory} />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
