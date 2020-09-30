@@ -8,7 +8,7 @@ var express = require('express');
 module.exports = function init(app) {
 
   //serve static files
-  app.use(express.static(path.join(__dirname, '../../dist')));
+  app.use(express.static(path.join(__dirname, '../../../dist')));
 
   app.use(morganLogger('dev'));
   // parse application/json
@@ -31,7 +31,7 @@ module.exports = function init(app) {
 
   // Load page
   app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../../dist/index.html'));
+    res.sendFile(path.join(__dirname, '../../../dist/index.html'));
   })
 
 

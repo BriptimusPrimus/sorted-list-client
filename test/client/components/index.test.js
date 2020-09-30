@@ -1,8 +1,8 @@
 import React from 'react';
 import { cleanup, fireEvent, waitFor } from '@testing-library/react';
 import { renderWithRedux } from '../utils/renderWrappers';
-import App from '../../../client/components/index';
-import * as mockService from '../../../client/services/data';
+import App from '../../../src/client/components/index';
+import * as mockService from '../../../src/client/services/data';
 import { 
     sortedByName,
     sortedBySurname,
@@ -11,7 +11,7 @@ import {
     sortedByStatus
 } from '../utils/dataMocks';
 
-jest.mock('../../../client/services/data');
+jest.mock('../../../src/client/services/data');
 
 describe('App tests', () => {
     beforeEach(() => {

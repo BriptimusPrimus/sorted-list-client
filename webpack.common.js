@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry:  {
-    main: './client'
+    main: './src/client'
   },
   output: {
     path: path.resolve(__dirname, 'dist')
@@ -14,7 +14,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js)$/,
-        include: path.resolve(__dirname, 'client'),
+        include: path.resolve(__dirname, 'src/client'),
         use: {
           loader: 'babel-loader'
         }
@@ -23,7 +23,7 @@ module.exports = {
         test: /\.css$/,
         include: [
           path.resolve(__dirname, 'node_modules/bootstrap'),
-          path.resolve(__dirname, 'client'),
+          path.resolve(__dirname, 'src/client'),
         ],
         sideEffects: true,
         use: [MiniCssExtractPlugin.loader, 'css-loader']
@@ -32,7 +32,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         include: [
           path.resolve(__dirname, 'node_modules/bootstrap'),
-          path.resolve(__dirname, 'client'),
+          path.resolve(__dirname, 'src/client'),
         ],
         use: {
           loader: 'url-loader',
@@ -46,7 +46,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         include: [
           path.resolve(__dirname, 'node_modules/bootstrap'),
-          path.resolve(__dirname, 'client'),
+          path.resolve(__dirname, 'src/client'),
         ],
         use: {
           loader: 'url-loader',

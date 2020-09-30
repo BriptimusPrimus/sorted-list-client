@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { getInitialState } from './dataMocks';
 
 // Import your own reducer
-import reducer from '../../../client/reducers';
+import reducer from '../../../src/client/reducers';
 
 const defaultInitialState = getInitialState();
 

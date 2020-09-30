@@ -2,7 +2,7 @@
  * Data Access Service Abstraction
  */
 
-var implementationModule = require('../../config').database.module;
+var implementationModule = require('../../../config').database.module;
 var dal = require('./' + implementationModule);
 
 function getEmployees(opts, callback) {

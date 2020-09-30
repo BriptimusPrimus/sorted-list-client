@@ -4,7 +4,7 @@
 
 var fs = require('fs');
 var path = require('path');
-var conf = require('../../../config');
+var conf = require('../../../../config');
 var FILE_PATH = path.join(__dirname, conf.database.file);
 
 function readFromFile(callback) {

@@ -1,4 +1,4 @@
-import config from '../../config';
+import config from '../../../config';
 import querystring from 'querystring';
 
 const apiEndpoint = config.data_service.api.protocol + '://'
