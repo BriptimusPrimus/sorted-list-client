@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MainContainer tests Renders 1`] = `
+exports[`ListContainer tests Renders 1`] = `
 <div
   id="main-view"
 >
