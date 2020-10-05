@@ -3,7 +3,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import ListContainer from '../containers/ListContainer';
+import ListContainer from './ListContainer';
 
 const initialState = {
   dummyData: {
