@@ -14,10 +14,10 @@ module.exports = {
   coverageReporters: ['cobertura', 'text', 'lcov'],
   coverageThreshold: {
     global: {
-      statements: 90,
-      branches: 70,
-      functions: 85,
-      lines: 90
+      statements: 95,
+      branches: 75,
+      functions: 95,
+      lines: 95
     }
   },
   projects: ['jest.server.config.js', 'jest.client.config.js']
