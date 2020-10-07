@@ -53,8 +53,8 @@ module.exports = function init(app) {
   // will print stacktrace
   if (app.get('env') === 'development' || app.get('env') === 'test') {
     app.use(function(err, req, res, next) {
-      console.log('########## ERROR ##########', err);
-      console.log(err.stack);
+      console.error('########## ERROR ##########', err);
+      console.error(err.stack);
 
       res.status(err.status || 500);
       res.json({
@@ -67,7 +67,7 @@ module.exports = function init(app) {
   // production error handler
   // no stacktraces leaked to user
   app.use(function(err, req, res, next) {
-    console.log('########## ERROR ##########', err);
+    console.error('########## ERROR ##########', err);
 
     res.status(err.status || 500);
     res.json({

@@ -4,7 +4,7 @@
 
 var dataAccess = require('../services/dataAccess');
 
-function getList(req, res, next) {
+const getList = async function getList(req, res, next) {
   var opts = {
     count: req.query.count,
     page: req.query.page,
@@ -12,16 +12,20 @@ function getList(req, res, next) {
     order: req.query.order
   };
 
-  dataAccess.getEmployees(opts, function(err, data) {
-    if (err) {
-      return next(err);
+  try {
+    const response = await dataAccess.getEmployees(opts);
+    if (response.success && response.data) {
+      return res.status(200).json({
+        list: response.data
+      });
     }
 
-    res.status(200);
-    res.json({
-      list: data
+    res.status(500).json({
+      errMessage: response.reason
     });
-  });
+  } catch(err) {
+    next(err);
+  }
 }
 
 module.exports = {

@@ -37,7 +37,7 @@ describe('Server API Routes', () => {
                 .query('sort=forceServiceError')
                 .expect(500)
                 .end((err, res) => {
-                    expect(res.body.error).toBe('Mock DAL error');
+                    expect(res.body.errMessage).toBe('Mock DAL error');
                     done();
                 });
         });

@@ -85,31 +85,30 @@ function extractChunk(rows, opts) {
   return rows.slice(i, j);
 }
 
-function getEmployees(opts, callback) {
-  // Test failure scenario
-  if (opts.sortBy === 'forceServiceError') {
-    return callback('Mock DAL error');
-  }
-
-  var chunk;
-  readFromFile(onRead);
-
-  function onRead(err, list) {
-    if (err) {
-      console.log('Mock DAL error:', err);
-      return callback('Mock DAL error');
+const getEmployees = async function getEmployees(opts) {
+  return new Promise((resolve, reject) => {
+    // Test failure scenario
+    if (opts.sortBy === 'forceServiceError') {
+      return reject('Mock DAL error');
     }
+    function onRead(err, list) {
+      if (err) {
+        console.log('Mock DAL error:', err);
+        return reject('Mock DAL error');
+      }
 
-    sort(list, opts);
-    chunk = extractChunk(list, opts);
-    chunk = pickFields(chunk);
-    callback(null, chunk);
-  }
+      sort(list, opts);
+      const chunk = extractChunk(list, opts);
+      const resultChunk = pickFields(chunk);
+      resolve(resultChunk);
+    }
+    readFromFile(onRead);
+  });
 }
 
 // This object implements the bridge interface:
 // interface: {
-//   getEmployees: function(options, callback){}
+//   getEmployees: async function(options){}
 // }
 module.exports = {
 	getEmployees: getEmployees

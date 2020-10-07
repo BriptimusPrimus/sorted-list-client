@@ -5,7 +5,7 @@
 var implementationModule = require('../../../config').database.module;
 var dal = require('./' + implementationModule);
 
-function getEmployees(opts, callback) {
+const getEmployees = async function getEmployees(opts) {
   opts.count = isNaN(Number(opts.count)) ?
     20 : Number(opts.count);
   opts.page = isNaN(Number(opts.page)) || opts.page < 1 ?
@@ -14,12 +14,18 @@ function getEmployees(opts, callback) {
   opts.order = opts.order || 'ASC';
   opts.filters = opts.filters || {};
 
-  dal.getEmployees(opts, function(err, data) {
-    if (err) {
-      return callback(err);
+  try {
+    const data = await dal.getEmployees(opts);
+    return {
+      success: true,
+      data
+    };
+  } catch(err) {
+    return {
+      success: false,
+      reason: (err && err.message) || err || ''
     }
-    callback(null, data);
-  });
+  }
 }
 
 // This object implements the bridge interface:

@@ -2,13 +2,13 @@
  * Data Access Service Implementation
  */
 
-function getEmployees(opts, callback) {
-  callback([]);
+const getEmployees = async function getEmployees(opts) {
+  return [];
 }
 
 // This object implements the bridge interface:
 // interface: {
-//   getEmployees: function(options, callback){}
+//   getEmployees: async function(options){}
 // }
 module.exports = {
 	getEmployees: getEmployees
