@@ -1,7 +1,4 @@
-import {
-  RECEIVE_DATA,
-  SORT_BY_COLUMN
-} from '../actions';
+import { RECEIVE_DATA, SORT_BY_COLUMN } from '../actions';
 
 const initialState = {
   dummyData: {
@@ -10,7 +7,7 @@ const initialState = {
         id: '10027',
         firstName: 'TERESA DE JESUS',
         surname: 'JOFRE',
-        surname2: 'GARFIAS', 
+        surname2: 'GARFIAS',
         codeNumber: '10027',
         rfc: 'JOGT000101',
         status: 'hired'
@@ -19,7 +16,7 @@ const initialState = {
         id: '11542',
         firstName: 'JUAN MANUEL',
         surname: 'NAJERA',
-        surname2: 'PEREZ', 
+        surname2: 'PEREZ',
         codeNumber: '11542',
         rfc: 'NAPJ701211',
         status: 'hired'
@@ -28,12 +25,12 @@ const initialState = {
         id: '42837',
         firstName: 'MARCOS',
         surname: 'ZARATE',
-        surname2: 'MARIN', 
+        surname2: 'MARIN',
         codeNumber: '42837',
         rfc: 'ZAMM570504',
         status: 'hired'
       }
-    ]    
+    ]
   },
   data: {
     list: []
@@ -42,27 +39,26 @@ const initialState = {
     column: 'code',
     orderDesc: false
   }
-}
+};
 
-const dummyData = function dummyData(state={}, action) {
+const dummyData = function dummyData(state = {}, action) {
   return state;
-}
+};
 
 const data = function data(state, action) {
   switch (action.type) {
     case RECEIVE_DATA:
-      return action.data
+      return action.data;
     default:
-      return state
+      return state;
   }
-}
+};
 
 const sortBy = function sortBy(state, action) {
   var isDesc;
   switch (action.type) {
     case SORT_BY_COLUMN:
-      isDesc = action.column === state.column ?
-        !state.orderDesc : true;
+      isDesc = action.column === state.column ? !state.orderDesc : true;
       return {
         column: action.column,
         orderDesc: isDesc
@@ -70,14 +66,14 @@ const sortBy = function sortBy(state, action) {
     default:
       return state;
   }
-}
+};
 
 const reducer = function reducer(state, action) {
   return {
     dummyData: dummyData(state.dummyData, action),
     data: data(state.data, action),
     sortBy: sortBy(state.sortBy, action)
-  }
-}
+  };
+};
 
 export default reducer;

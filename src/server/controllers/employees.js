@@ -23,11 +23,11 @@ const getList = async function getList(req, res, next) {
     res.status(500).json({
       errMessage: response.reason
     });
-  } catch(err) {
+  } catch (err) {
     next(err);
   }
-}
+};
 
 module.exports = {
   getList: getList
-}
+};

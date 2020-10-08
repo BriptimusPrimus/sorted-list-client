@@ -8,7 +8,7 @@ var conf = require('../../../../config');
 var FILE_PATH = path.join(__dirname, conf.database.file);
 
 function readFromFile(callback) {
-  fs.readFile(FILE_PATH, 'utf8', function(err, data) {
+  fs.readFile(FILE_PATH, 'utf8', function (err, data) {
     if (err) {
       return callback(err);
     }
@@ -34,27 +34,27 @@ function sort(rows, opts) {
     ord = -1;
   }
 
-  rows.sort(function(a, b) {
+  rows.sort(function (a, b) {
     if (a[sortBy] < b[sortBy]) {
       return -1 * ord;
     }
     if (a[sortBy] > b[sortBy]) {
       return 1 * ord;
     }
-    return 0;    
+    return 0;
   });
 }
 
 function mapFields() {
   return {
-    'id': 'idpersona',
-    'firstName': 'nombre',
-    'surname': 'apaterno',
-    'surname2': 'amaterno',
-    'codeNumber': 'codigo',
-    'rfc': 'rfc',
-    'status': 'status'
-  }
+    id: 'idpersona',
+    firstName: 'nombre',
+    surname: 'apaterno',
+    surname2: 'amaterno',
+    codeNumber: 'codigo',
+    rfc: 'rfc',
+    status: 'status'
+  };
 }
 
 function pickFields(list) {
@@ -62,8 +62,7 @@ function pickFields(list) {
 
   function getStatus(status) {
     status = status.toLowerCase();
-    return status === 'contratado' ?
-      'hired' : status;
+    return status === 'contratado' ? 'hired' : status;
   }
 
   function mapFn(obj) {
@@ -74,8 +73,8 @@ function pickFields(list) {
       surname2: obj.amaterno,
       codeNumber: obj.codigo,
       rfc: obj.rfc,
-      status: getStatus(obj.status)   
-    }
+      status: getStatus(obj.status)
+    };
   }
 }
 
@@ -104,12 +103,12 @@ const getEmployees = async function getEmployees(opts) {
     }
     readFromFile(onRead);
   });
-}
+};
 
 // This object implements the bridge interface:
 // interface: {
 //   getEmployees: async function(options){}
 // }
 module.exports = {
-	getEmployees: getEmployees
+  getEmployees: getEmployees
 };

@@ -1,21 +1,20 @@
 import React from 'react';
 
-const TableHeader = ({ sortBy={}, onSetSortColumn }) => {
-  const sortClass = sortBy.orderDesc ?
-    'order-desc' : 'order-asc';
+const TableHeader = ({ sortBy = {}, onSetSortColumn }) => {
+  const sortClass = sortBy.orderDesc ? 'order-desc' : 'order-asc';
 
   const setColumnSortClass = function setColumnSortClass(column) {
-    return sortBy.column === column ?
-      `text-center actionable ${sortClass}` : 'text-center actionable';
-  }
+    return sortBy.column === column
+      ? `text-center actionable ${sortClass}`
+      : 'text-center actionable';
+  };
 
   const onHeaderClick = function onHeaderClick(column) {
-    var orderDesc = column === sortBy.column ?
-      !sortBy.orderDesc : true;
+    var orderDesc = column === sortBy.column ? !sortBy.orderDesc : true;
     onSetSortColumn(column, orderDesc);
-  }
+  };
 
-  return(
+  return (
     <thead>
       <tr>
         <th

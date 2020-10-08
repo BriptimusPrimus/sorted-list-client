@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry:  {
+  entry: {
     main: './src/client'
   },
   output: {
@@ -23,7 +23,7 @@ module.exports = {
         test: /\.css$/,
         include: [
           path.resolve(__dirname, 'node_modules/bootstrap'),
-          path.resolve(__dirname, 'src/client'),
+          path.resolve(__dirname, 'src/client')
         ],
         sideEffects: true,
         use: [MiniCssExtractPlugin.loader, 'css-loader']
@@ -32,7 +32,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         include: [
           path.resolve(__dirname, 'node_modules/bootstrap'),
-          path.resolve(__dirname, 'src/client'),
+          path.resolve(__dirname, 'src/client')
         ],
         use: {
           loader: 'url-loader',
@@ -46,7 +46,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         include: [
           path.resolve(__dirname, 'node_modules/bootstrap'),
-          path.resolve(__dirname, 'src/client'),
+          path.resolve(__dirname, 'src/client')
         ],
         use: {
           loader: 'url-loader',
@@ -61,8 +61,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
-        template: './templates/index.html',
-        filename: './index.html'
+      template: './templates/index.html',
+      filename: './index.html'
     })
   ]
 };

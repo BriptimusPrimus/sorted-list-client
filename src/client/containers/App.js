@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Switch,
-  Route,
-} from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
 import ListContainer from './ListContainer';
 
 const initialState = {
@@ -49,11 +46,11 @@ const initialState = {
 const App = () => {
   return (
     <Switch>
-      <Route path="/">
+      <Route path='/'>
         <ListContainer initialState={initialState} />
       </Route>
     </Switch>
   );
-}
+};
 
 export default App;

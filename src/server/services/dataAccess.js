@@ -6,10 +6,8 @@ var implementationModule = require('../../../config').database.module;
 var dal = require('./' + implementationModule);
 
 const getEmployees = async function getEmployees(opts) {
-  opts.count = isNaN(Number(opts.count)) ?
-    20 : Number(opts.count);
-  opts.page = isNaN(Number(opts.page)) || opts.page < 1 ?
-    1 : Number(opts.page);
+  opts.count = isNaN(Number(opts.count)) ? 20 : Number(opts.count);
+  opts.page = isNaN(Number(opts.page)) || opts.page < 1 ? 1 : Number(opts.page);
   opts.sortBy = opts.sortBy;
   opts.order = opts.order || 'ASC';
   opts.filters = opts.filters || {};
@@ -20,18 +18,18 @@ const getEmployees = async function getEmployees(opts) {
       success: true,
       data
     };
-  } catch(err) {
+  } catch (err) {
     return {
       success: false,
       reason: (err && err.message) || err || ''
-    }
+    };
   }
-}
+};
 
 // This object implements the bridge interface:
 // interface: {
 //   getEmployees: function(options, callback){}
 // }
 module.exports = {
-	getEmployees: getEmployees
+  getEmployees: getEmployees
 };
