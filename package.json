@@ -11,7 +11,9 @@
     "mock": "NODE_ENV=test node . && webpack-dev-server --env development --color",
     "mock:server": "NODE_ENV=test node .",
     "test": "jest --coverage",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "format": "prettier \"**/*.+(js|jsx|json|css)\" --write",
+    "validate-format": "prettier \"**/*.+(js|jsx|json|css)\" --list-different"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,7 @@
     "css-loader": "^4.2.2",
     "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.3",
@@ -56,6 +59,7 @@
     "jest": "^26.4.2",
     "mini-css-extract-plugin": "^0.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "prettier": "^2.1.2",
     "supertest": "^2.0.1",
     "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
