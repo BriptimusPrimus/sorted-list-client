@@ -10,7 +10,8 @@
     "dev:client": "webpack-dev-server --env development --color",
     "mock": "NODE_ENV=test node . && webpack-dev-server --env development --color",
     "mock:server": "NODE_ENV=test node .",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "lint": "eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,11 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.2",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.3",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.4.1",
     "identity-obj-proxy": "^3.0.0",
