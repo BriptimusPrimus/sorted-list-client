@@ -28,32 +28,6 @@ const getRequest = async function getRequest1(endpoint) {
   return data;
 };
 
-const postRequest = async function postRequest(enpoint) {
-  const requestConf = {
-    method: 'POST',
-    mode: 'cors',
-    headers: new Headers({
-      'Content-Type': 'application/json'
-    }),
-    body: JSON.stringify(data)
-  };
-
-  const response = await fetch(endpoint, requestConf);
-  if (response.status !== 200) {
-    return {
-      error: 'Service Failure',
-      status: response.status
-    };
-  }
-
-  const data = await response.json;
-  if (data.error) {
-    throw new Error(data);
-  }
-
-  return data;
-};
-
 const mapFields = function mapFields() {
   return {
     name: 'firstName',
@@ -64,22 +38,21 @@ const mapFields = function mapFields() {
   };
 };
 
-const getEmployees = function getEmployees(options) {
-  options = options || {};
-  options.sortBy = options.sortBy || {};
-  options.sortBy.column = options.sortBy.column || 'name';
+const getEmployees = function getEmployees(options = {}) {
   const fieldMapper = mapFields();
+  const sortBy = options.sortBy || {
+    column: 'name'
+  };
+
   const params = {
     count: options.count || config.data_service.defaulCount,
-    sort: fieldMapper[options.sortBy.column],
-    order: options.sortBy.orderDesc ? 'DESC' : 'ASC'
+    sort: fieldMapper[sortBy.column],
+    order: sortBy.orderDesc ? 'DESC' : 'ASC'
   };
 
   const endpoint = `${
     apiEndpoint + config.data_service.api.employees_data
   }?${querystring.stringify(params)}`;
-
-  console.log('GET REQUEST TO:', endpoint);
 
   return getRequest(endpoint);
 };

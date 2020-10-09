@@ -4,17 +4,21 @@
 
 const implementationModule = require('../../../config').database.module;
 
+// eslint-disable-next-line import/no-dynamic-require
 const dal = require(`./${implementationModule}`);
 
 const getEmployees = async function getEmployees(opts) {
-  opts.count = isNaN(Number(opts.count)) ? 20 : Number(opts.count);
-  opts.page = isNaN(Number(opts.page)) || opts.page < 1 ? 1 : Number(opts.page);
-  opts.sortBy = opts.sortBy;
-  opts.order = opts.order || 'ASC';
-  opts.filters = opts.filters || {};
+  const params = {
+    count: Number.isNaN(Number(opts.count)) ? 20 : Number(opts.count),
+    page:
+      Number.isNaN(Number(opts.page)) || opts.page < 1 ? 1 : Number(opts.page),
+    sortBy: opts.sortBy,
+    order: opts.order || 'ASC',
+    filters: opts.filters || {}
+  };
 
   try {
-    const data = await dal.getEmployees(opts);
+    const data = await dal.getEmployees(params);
     return {
       success: true,
       data

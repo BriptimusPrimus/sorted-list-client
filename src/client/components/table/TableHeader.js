@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const TableHeader = ({ sortBy = {}, onSetSortColumn }) => {
+const TableHeader = ({ sortBy, onSetSortColumn }) => {
   const sortClass = sortBy.orderDesc ? 'order-desc' : 'order-asc';
 
   const setColumnSortClass = function setColumnSortClass(column) {
@@ -53,3 +54,18 @@ const TableHeader = ({ sortBy = {}, onSetSortColumn }) => {
 };
 
 export default TableHeader;
+
+TableHeader.propTypes = {
+  sortBy: PropTypes.shape(
+    PropTypes.shape({
+      column: PropTypes.string,
+      orderDesc: PropTypes.bool
+    })
+  ),
+  onSetSortColumn: PropTypes.func
+};
+
+TableHeader.defaultProps = {
+  sortBy: {},
+  onSetSortColumn: () => {}
+};

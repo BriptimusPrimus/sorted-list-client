@@ -8,10 +8,23 @@ const conf = require('../../../../config');
 
 const FILE_PATH = path.join(__dirname, conf.database.file);
 
+const mapFields = function mapFields() {
+  return {
+    id: 'idpersona',
+    firstName: 'nombre',
+    surname: 'apaterno',
+    surname2: 'amaterno',
+    codeNumber: 'codigo',
+    rfc: 'rfc',
+    status: 'status'
+  };
+};
+
 function readFromFile(callback) {
-  fs.readFile(FILE_PATH, 'utf8', function (err, data) {
+  fs.readFile(FILE_PATH, 'utf8', function readFileCb(err, data) {
     if (err) {
-      return callback(err);
+      callback(err);
+      return;
     }
 
     const obj = JSON.parse(data);
@@ -35,7 +48,7 @@ function sort(rows, opts) {
     ord = -1;
   }
 
-  rows.sort(function (a, b) {
+  rows.sort(function sortRule(a, b) {
     if (a[sortBy] < b[sortBy]) {
       return -1 * ord;
     }
@@ -46,27 +59,13 @@ function sort(rows, opts) {
   });
 }
 
-function mapFields() {
-  return {
-    id: 'idpersona',
-    firstName: 'nombre',
-    surname: 'apaterno',
-    surname2: 'amaterno',
-    codeNumber: 'codigo',
-    rfc: 'rfc',
-    status: 'status'
-  };
-}
-
 function pickFields(list) {
-  return list.map(mapFn);
+  const getStatus = function getStatus(status) {
+    const value = status.toLowerCase();
+    return value === 'contratado' ? 'hired' : value;
+  };
 
-  function getStatus(status) {
-    status = status.toLowerCase();
-    return status === 'contratado' ? 'hired' : status;
-  }
-
-  function mapFn(obj) {
+  const mapFn = function mapFn(obj) {
     return {
       id: obj.idpersona,
       firstName: obj.nombre,
@@ -76,7 +75,9 @@ function pickFields(list) {
       rfc: obj.rfc,
       status: getStatus(obj.status)
     };
-  }
+  };
+
+  return list.map(mapFn);
 }
 
 function extractChunk(rows, opts) {
@@ -89,12 +90,13 @@ const getEmployees = async function getEmployees(opts) {
   return new Promise((resolve, reject) => {
     // Test failure scenario
     if (opts.sortBy === 'forceServiceError') {
-      return reject('Mock DAL error');
+      reject(new Error('Mock DAL error'));
+      return;
     }
     function onRead(err, list) {
       if (err) {
-        console.log('Mock DAL error:', err);
-        return reject('Mock DAL error');
+        reject(new Error('Mock DAL error'));
+        return;
       }
 
       sort(list, opts);

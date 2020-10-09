@@ -2,7 +2,7 @@
  * Data Access Service Implementation
  */
 
-const getEmployees = async function getEmployees(opts) {
+const getEmployees = async function getEmployees() {
   return [];
 };
 

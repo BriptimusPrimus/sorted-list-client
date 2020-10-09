@@ -8,7 +8,7 @@ const employeesController = require('../controllers/employees');
 const router = express.Router();
 
 /* GET dummy data. */
-router.get('/', function (req, res) {
+router.get('/', function dummy(req, res) {
   res.status(200);
   res.json({
     data: 'Hello World!'

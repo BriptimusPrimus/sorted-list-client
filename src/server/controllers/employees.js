@@ -15,9 +15,10 @@ const getList = async function getList(req, res, next) {
   try {
     const response = await dataAccess.getEmployees(opts);
     if (response.success && response.data) {
-      return res.status(200).json({
+      res.status(200).json({
         list: response.data
       });
+      return;
     }
 
     res.status(500).json({

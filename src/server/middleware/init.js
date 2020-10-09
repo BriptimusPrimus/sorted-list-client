@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const morganLogger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -17,7 +18,7 @@ module.exports = function init(app) {
   app.use(cookieParser());
 
   // Allow CORS
-  app.use(function (req, res, next) {
+  app.use(function allowCors(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
     res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:8080');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -32,17 +33,12 @@ module.exports = function init(app) {
   app.use('/api', routes);
 
   // Load page
-  app.get('/', function (req, res) {
+  app.get('/', function loadStaticPage(req, res) {
     res.sendFile(path.join(__dirname, '../../../dist/index.html'));
   });
 
   // catch 404 and forward to error handler
-  app.use(function (req, res, next) {
-    console.log('');
-    console.log('*********************************');
-    console.log('req.url:', req.url);
-    console.log('*********************************');
-    console.log('');
+  app.use(function handle404(req, res, next) {
     const err = new Error('Not Found');
     err.status = 404;
     next(err);
@@ -53,7 +49,8 @@ module.exports = function init(app) {
   // development (and test/mock) error handler
   // will print stacktrace
   if (app.get('env') === 'development' || app.get('env') === 'test') {
-    app.use(function (err, req, res, next) {
+    // eslint-disable-next-line no-unused-vars
+    app.use(function handleErrorDev(err, req, res, next) {
       console.error('########## ERROR ##########', err);
       console.error(err.stack);
 
@@ -67,7 +64,8 @@ module.exports = function init(app) {
 
   // production error handler
   // no stacktraces leaked to user
-  app.use(function (err, req, res, next) {
+  // eslint-disable-next-line no-unused-vars
+  app.use(function handleError(err, req, res, next) {
     console.error('########## ERROR ##########', err);
 
     res.status(err.status || 500);

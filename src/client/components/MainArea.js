@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DataTable from './table/DataTable';
 
 const MainArea = ({ data, sortBy, onSetSortColumn }) => {
@@ -21,3 +22,27 @@ const MainArea = ({ data, sortBy, onSetSortColumn }) => {
 };
 
 export default MainArea;
+
+MainArea.propTypes = {
+  data: PropTypes.arrayOf({
+    firstName: PropTypes.string,
+    surname: PropTypes.string,
+    surname2: PropTypes.string,
+    codeNumber: PropTypes.string,
+    rfc: PropTypes.string,
+    status: PropTypes.string
+  }),
+  sortBy: PropTypes.shape(
+    PropTypes.shape({
+      column: PropTypes.string,
+      orderDesc: PropTypes.bool
+    })
+  ),
+  onSetSortColumn: PropTypes.func
+};
+
+MainArea.defaultProps = {
+  data: [],
+  sortBy: {},
+  onSetSortColumn: () => {}
+};

@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import MainView from '../components/MainView';
 import { sortByColumn, receiveData } from '../actions';
 import reducer from '../reducers';
@@ -15,7 +16,6 @@ const ListContainer = ({ initialState }) => {
     getEmployees(fetchOpts)
       .then(function fullfilled(data) {
         dispatch(receiveData(data));
-        console.log('state:', state);
       })
       .catch(function rejected(reason) {
         // dispatch(receiveDataError(reason));
@@ -51,3 +51,34 @@ const ListContainer = ({ initialState }) => {
 };
 
 export default ListContainer;
+
+ListContainer.propTypes = {
+  initialState: PropTypes.shape({
+    data: PropTypes.arrayOf({
+      firstName: PropTypes.string,
+      surname: PropTypes.string,
+      surname2: PropTypes.string,
+      codeNumber: PropTypes.string,
+      rfc: PropTypes.string,
+      status: PropTypes.string
+    }),
+    sortBy: PropTypes.shape(
+      PropTypes.shape({
+        column: PropTypes.string,
+        orderDesc: PropTypes.bool
+      })
+    )
+  })
+};
+
+ListContainer.defaultProps = {
+  initialState: {
+    data: {
+      list: []
+    },
+    sortBy: {
+      column: 'code',
+      orderDesc: false
+    }
+  }
+};
