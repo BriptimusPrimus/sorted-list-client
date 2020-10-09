@@ -11,5 +11,5 @@ const getEmployees = async function getEmployees(opts) {
 //   getEmployees: async function(options){}
 // }
 module.exports = {
-  getEmployees: getEmployees
+  getEmployees
 };

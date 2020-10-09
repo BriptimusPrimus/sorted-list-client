@@ -1,15 +1,7 @@
-import config from '../../../config';
 import querystring from 'querystring';
+import config from '../../../config';
 
-const apiEndpoint =
-  config.data_service.api.protocol +
-  '://' +
-  config.data_service.api.host +
-  ':' +
-  config.data_service.api.port +
-  '/' +
-  config.data_service.api.root +
-  '/';
+const apiEndpoint = `${config.data_service.api.protocol}://${config.data_service.api.host}:${config.data_service.api.port}/${config.data_service.api.root}/`;
 
 const getRequest = async function getRequest1(endpoint) {
   const requestConf = {
@@ -83,11 +75,9 @@ const getEmployees = function getEmployees(options) {
     order: options.sortBy.orderDesc ? 'DESC' : 'ASC'
   };
 
-  const endpoint =
-    apiEndpoint +
-    config.data_service.api.employees_data +
-    '?' +
-    querystring.stringify(params);
+  const endpoint = `${
+    apiEndpoint + config.data_service.api.employees_data
+  }?${querystring.stringify(params)}`;
 
   console.log('GET REQUEST TO:', endpoint);
 

@@ -2,8 +2,9 @@
  * Data Access Service Abstraction
  */
 
-var implementationModule = require('../../../config').database.module;
-var dal = require('./' + implementationModule);
+const implementationModule = require('../../../config').database.module;
+
+const dal = require(`./${implementationModule}`);
 
 const getEmployees = async function getEmployees(opts) {
   opts.count = isNaN(Number(opts.count)) ? 20 : Number(opts.count);
@@ -31,5 +32,5 @@ const getEmployees = async function getEmployees(opts) {
 //   getEmployees: function(options, callback){}
 // }
 module.exports = {
-  getEmployees: getEmployees
+  getEmployees
 };

@@ -2,10 +2,10 @@
  * employees Controller
  */
 
-var dataAccess = require('../services/dataAccess');
+const dataAccess = require('../services/dataAccess');
 
 const getList = async function getList(req, res, next) {
-  var opts = {
+  const opts = {
     count: req.query.count,
     page: req.query.page,
     sortBy: req.query.sort,
@@ -29,5 +29,5 @@ const getList = async function getList(req, res, next) {
 };
 
 module.exports = {
-  getList: getList
+  getList
 };

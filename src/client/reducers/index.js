@@ -55,7 +55,7 @@ const data = function data(state, action) {
 };
 
 const sortBy = function sortBy(state, action) {
-  var isDesc;
+  let isDesc;
   switch (action.type) {
     case SORT_BY_COLUMN:
       isDesc = action.column === state.column ? !state.orderDesc : true;

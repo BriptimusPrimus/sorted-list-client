@@ -2,10 +2,11 @@
  * Data Access Mock Service
  */
 
-var fs = require('fs');
-var path = require('path');
-var conf = require('../../../../config');
-var FILE_PATH = path.join(__dirname, conf.database.file);
+const fs = require('fs');
+const path = require('path');
+const conf = require('../../../../config');
+
+const FILE_PATH = path.join(__dirname, conf.database.file);
 
 function readFromFile(callback) {
   fs.readFile(FILE_PATH, 'utf8', function (err, data) {
@@ -13,8 +14,8 @@ function readFromFile(callback) {
       return callback(err);
     }
 
-    var obj = JSON.parse(data);
-    var list = (obj && obj.rows) || [];
+    const obj = JSON.parse(data);
+    const list = (obj && obj.rows) || [];
     callback(null, list);
   });
 }
@@ -24,12 +25,12 @@ function sort(rows, opts) {
     return;
   }
 
-  var sortBy = mapFields()[opts.sortBy];
+  const sortBy = mapFields()[opts.sortBy];
   if (!sortBy) {
     return;
   }
 
-  var ord = 1;
+  let ord = 1;
   if (opts.order === 'DESC') {
     ord = -1;
   }
@@ -79,8 +80,8 @@ function pickFields(list) {
 }
 
 function extractChunk(rows, opts) {
-  var i = (opts.page - 1) * opts.count;
-  var j = i + opts.count;
+  const i = (opts.page - 1) * opts.count;
+  const j = i + opts.count;
   return rows.slice(i, j);
 }
 
@@ -110,5 +111,5 @@ const getEmployees = async function getEmployees(opts) {
 //   getEmployees: async function(options){}
 // }
 module.exports = {
-  getEmployees: getEmployees
+  getEmployees
 };

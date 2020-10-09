@@ -10,7 +10,7 @@ const TableHeader = ({ sortBy = {}, onSetSortColumn }) => {
   };
 
   const onHeaderClick = function onHeaderClick(column) {
-    var orderDesc = column === sortBy.column ? !sortBy.orderDesc : true;
+    const orderDesc = column === sortBy.column ? !sortBy.orderDesc : true;
     onSetSortColumn(column, orderDesc);
   };
 

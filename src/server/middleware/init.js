@@ -1,12 +1,12 @@
-var morganLogger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var path = require('path');
-var routes = require('../routes/index');
-var express = require('express');
+const morganLogger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const path = require('path');
+const express = require('express');
+const routes = require('../routes/index');
 
 module.exports = function init(app) {
-  //serve static files
+  // serve static files
   app.use(express.static(path.join(__dirname, '../../../dist')));
 
   app.use(morganLogger('dev'));
@@ -43,7 +43,7 @@ module.exports = function init(app) {
     console.log('req.url:', req.url);
     console.log('*********************************');
     console.log('');
-    var err = new Error('Not Found');
+    const err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
