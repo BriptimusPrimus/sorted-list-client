@@ -43,11 +43,7 @@ function sort(rows, opts) {
     return;
   }
 
-  let ord = 1;
-  if (opts.order === 'DESC') {
-    ord = -1;
-  }
-
+  const ord = opts.order === 'DESC' ? 1 : -1;
   rows.sort(function sortRule(a, b) {
     if (a[sortBy] < b[sortBy]) {
       return -1 * ord;

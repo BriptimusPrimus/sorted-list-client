@@ -39,7 +39,7 @@ const initialState = {
   },
   sortBy: {
     column: 'code',
-    orderDesc: false
+    orderDesc: true
   }
 };
 
