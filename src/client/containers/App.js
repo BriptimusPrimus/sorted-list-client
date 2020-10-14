@@ -46,7 +46,7 @@ const initialState = {
 const App = () => {
   return (
     <Switch>
-      <Route path='/'>
+      <Route path="/">
         <ListContainer initialState={initialState} />
       </Route>
     </Switch>

@@ -7,7 +7,7 @@ import DataSection from './MainArea';
 const MainView = ({ data, sortBy, onSetSortColumn }) => {
   const rows = data.list;
   return (
-    <div id='main-view'>
+    <div id="main-view">
       <DataSection
         data={rows}
         sortBy={sortBy}

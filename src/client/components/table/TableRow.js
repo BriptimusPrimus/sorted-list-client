@@ -10,13 +10,13 @@ const TableRow = ({ record = {} }) => {
 
   return (
     <tr>
-      <td className='text-center'>{record.firstName}</td>
-      <td className='text-center'>
+      <td className="text-center">{record.firstName}</td>
+      <td className="text-center">
         {record.surname}-{record.surname2}
       </td>
-      <td className='text-center'>{record.codeNumber}</td>
-      <td className='text-center'>{record.rfc}</td>
-      <td className='text-center'>{capitalizeFirstLetter(record.status)}</td>
+      <td className="text-center">{record.codeNumber}</td>
+      <td className="text-center">{record.rfc}</td>
+      <td className="text-center">{capitalizeFirstLetter(record.status)}</td>
     </tr>
   );
 };
