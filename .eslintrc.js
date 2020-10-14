@@ -5,7 +5,6 @@ module.exports = {
     jest: true
   },
   rules: {
-    // 'prefer-object-spread': [0],
     'react/jsx-filename-extension': [0],
     'import/prefer-default-export': [0]
   }

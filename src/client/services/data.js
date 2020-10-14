@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 import querystring from 'querystring';
 import config from '../../../config';
 
