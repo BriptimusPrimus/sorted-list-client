@@ -2,9 +2,9 @@
  * Module dependencies.
  */
 
-var app = require('./app');
-var debug = require('debug')('hackauth');
-var http = require('http');
+const http = require('http');
+const debug = require('debug')('hackauth');
+const app = require('./app');
 
 /**
  * Boot configuration loading.
@@ -16,14 +16,14 @@ require('./config/bootConfig');
  * Get port from environment and store in Express.
  */
 
-var port = process.env.PORT || '3000';
+const port = process.env.PORT || '3000';
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -42,7 +42,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+  const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -70,7 +70,7 @@ function onListening() {
   console.log('LISTENING ON', server.address());
   console.log('************');
   console.log('************');
-  var addr = server.address();
-  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  const addr = server.address();
+  const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }

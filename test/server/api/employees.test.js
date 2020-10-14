@@ -1,8 +1,8 @@
-var supertest = require('supertest');
+const supertest = require('supertest');
+const app = require('../../../app');
 
 describe('Server API Routes', () => {
-  var app = require('../../../app');
-  var api = supertest(app);
+  const api = supertest(app);
 
   describe('employees', () => {
     test('Gets 20 rows by default', done => {
