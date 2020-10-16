@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Switch,
-  Route,
-} from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
 import ListContainer from './ListContainer';
 
 const initialState = {
@@ -42,7 +39,7 @@ const initialState = {
   },
   sortBy: {
     column: 'code',
-    orderDesc: false
+    orderDesc: true
   }
 };
 
@@ -54,6 +51,6 @@ const App = () => {
       </Route>
     </Switch>
   );
-}
+};
 
 export default App;

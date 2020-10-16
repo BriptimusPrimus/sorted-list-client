@@ -1,8 +1,8 @@
-var mysql = require('mysql');
-var fs = require('fs');
+const mysql = require('mysql');
+const fs = require('fs');
 
 // GRANT ALL on sorted_list.* to 'myusr'@'localhost' identified by '123456';
-var conf = {
+const conf = {
   db: {
     connectionOptions: {
       host: 'localhost',
@@ -15,7 +15,7 @@ var conf = {
 };
 
 function newConnection(callback) {
-  var connection = mysql.createConnection(conf.db.connectionOptions);
+  const connection = mysql.createConnection(conf.db.connectionOptions);
 
   connection.connect(function(err) {
     if (err) {
@@ -75,7 +75,7 @@ function executeOne(sqlQry, callback) {
 }
 
 function getAllpersons(callback) {
-  var sqlQry = `
+  const sqlQry = `
     SELECT
       p.idpersona,
         p.idmunicipio,
@@ -108,11 +108,11 @@ function read(callback) {
 }
 
 function write(rows, callback) {
-  var FILE_NAME = 'persona.json';
-  var obj = {
+  const FILE_NAME = 'persona.json';
+  const obj = {
     rows: rows
   }
-  var json = JSON.stringify(obj);
+  const json = JSON.stringify(obj);
 
   fs.writeFile(FILE_NAME, json, 'utf8', onWriteFile);
 
@@ -127,8 +127,7 @@ function write(rows, callback) {
 }
 
 function run() {
-  var beg = Date.now();
-  var end;
+  const beg = Date.now();
 
   read(onRead);
 
@@ -146,7 +145,7 @@ function run() {
       return;
     }
     console.log('Run successfull');
-    end = Date.now();
+    const end = Date.now();
     console.log('time:', (end - beg));
   }
 }
