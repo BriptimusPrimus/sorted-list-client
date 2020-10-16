@@ -15,14 +15,16 @@ const TableBody = ({ data }) => {
 export default TableBody;
 
 TableBody.propTypes = {
-  data: PropTypes.arrayOf({
-    firstName: PropTypes.string,
-    surname: PropTypes.string,
-    surname2: PropTypes.string,
-    codeNumber: PropTypes.string,
-    rfc: PropTypes.string,
-    status: PropTypes.string
-  })
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      firstName: PropTypes.string,
+      surname: PropTypes.string,
+      surname2: PropTypes.string,
+      codeNumber: PropTypes.string,
+      rfc: PropTypes.string,
+      status: PropTypes.string
+    })
+  )
 };
 
 TableBody.defaultProps = {

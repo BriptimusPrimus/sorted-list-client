@@ -15,20 +15,20 @@ const DataTable = ({ data, sortBy, onSetSortColumn }) => {
 export default DataTable;
 
 DataTable.propTypes = {
-  data: PropTypes.arrayOf({
-    firstName: PropTypes.string,
-    surname: PropTypes.string,
-    surname2: PropTypes.string,
-    codeNumber: PropTypes.string,
-    rfc: PropTypes.string,
-    status: PropTypes.string
-  }),
-  sortBy: PropTypes.shape(
+  data: PropTypes.arrayOf(
     PropTypes.shape({
-      column: PropTypes.string,
-      orderDesc: PropTypes.bool
+      firstName: PropTypes.string,
+      surname: PropTypes.string,
+      surname2: PropTypes.string,
+      codeNumber: PropTypes.string,
+      rfc: PropTypes.string,
+      status: PropTypes.string
     })
   ),
+  sortBy: PropTypes.shape({
+    column: PropTypes.string,
+    orderDesc: PropTypes.bool
+  }),
   onSetSortColumn: PropTypes.func
 };
 

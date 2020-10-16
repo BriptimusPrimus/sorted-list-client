@@ -54,20 +54,22 @@ export default ListContainer;
 
 ListContainer.propTypes = {
   initialState: PropTypes.shape({
-    data: PropTypes.arrayOf({
-      firstName: PropTypes.string,
-      surname: PropTypes.string,
-      surname2: PropTypes.string,
-      codeNumber: PropTypes.string,
-      rfc: PropTypes.string,
-      status: PropTypes.string
+    data: PropTypes.shape({
+      list: PropTypes.arrayOf(
+        PropTypes.shape({
+          firstName: PropTypes.string,
+          surname: PropTypes.string,
+          surname2: PropTypes.string,
+          codeNumber: PropTypes.string,
+          rfc: PropTypes.string,
+          status: PropTypes.string
+        })
+      )
     }),
-    sortBy: PropTypes.shape(
-      PropTypes.shape({
-        column: PropTypes.string,
-        orderDesc: PropTypes.bool
-      })
-    )
+    sortBy: PropTypes.shape({
+      column: PropTypes.string,
+      orderDesc: PropTypes.bool
+    })
   })
 };
 

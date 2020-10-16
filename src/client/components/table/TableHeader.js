@@ -56,12 +56,10 @@ const TableHeader = ({ sortBy, onSetSortColumn }) => {
 export default TableHeader;
 
 TableHeader.propTypes = {
-  sortBy: PropTypes.shape(
-    PropTypes.shape({
-      column: PropTypes.string,
-      orderDesc: PropTypes.bool
-    })
-  ),
+  sortBy: PropTypes.shape({
+    column: PropTypes.string,
+    orderDesc: PropTypes.bool
+  }),
   onSetSortColumn: PropTypes.func
 };
 
