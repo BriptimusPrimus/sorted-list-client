@@ -1,8 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import ListContainer from './ListContainer';
+import PropTypes from 'prop-types';
+import routes from '../routes';
 
-const initialState = {
+const foo = {
   dummyData: {
     rows: [
       {
@@ -43,14 +44,49 @@ const initialState = {
   }
 };
 
-const App = () => {
+const App = ({ initialState }) => {
   return (
     <Switch>
-      <Route path="/">
-        <ListContainer initialState={initialState} />
-      </Route>
+      {routes.map(route => (
+        <Route path={route.path} key={route.key}>
+          <route.component initialState={initialState} />
+        </Route>
+      ))}
     </Switch>
   );
 };
 
 export default App;
+
+App.propTypes = {
+  initialState: PropTypes.shape({
+    data: PropTypes.shape({
+      list: PropTypes.arrayOf(
+        PropTypes.shape({
+          firstName: PropTypes.string,
+          surname: PropTypes.string,
+          surname2: PropTypes.string,
+          codeNumber: PropTypes.string,
+          rfc: PropTypes.string,
+          status: PropTypes.string
+        })
+      )
+    }),
+    sortBy: PropTypes.shape({
+      column: PropTypes.string,
+      orderDesc: PropTypes.bool
+    })
+  })
+};
+
+App.defaultProps = {
+  initialState: {
+    data: {
+      list: []
+    },
+    sortBy: {
+      column: 'code',
+      orderDesc: false
+    }
+  }
+};

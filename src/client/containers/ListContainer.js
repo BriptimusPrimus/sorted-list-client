@@ -84,3 +84,7 @@ ListContainer.defaultProps = {
     }
   }
 };
+
+ListContainer.loadData = function loadData() {
+  return getEmployees();
+};
