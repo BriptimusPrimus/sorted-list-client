@@ -7,6 +7,7 @@ module.exports = {
     '!src/client/routes.js',
     '!src/client/containers/App.js',
     '!src/client/services/**',
+    '!src/server/routes/pages.js',
     '!src/server/services/**',
     '!src/server/middleware/**'
   ],

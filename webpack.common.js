@@ -8,7 +8,8 @@ module.exports = {
     main: './src/client'
   },
   output: {
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist', 'public'),
+    publicPath: 'static/'
   },
   module: {
     rules: [
