@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
-import ListContainer from '../../../src/client/containers/ListContainer';
+import ListRouteHandler from '../../../src/client/containers/ListRouteHandler';
 import * as mockService from '../../../src/client/services/data';
 import {
   getInitialState,
@@ -13,7 +13,7 @@ import {
 
 jest.mock('../../../src/client/services/data');
 
-describe('ListContainer tests', () => {
+describe('ListRouteHandler tests', () => {
   const initialState = getInitialState();
 
   beforeEach(() => {
@@ -26,7 +26,9 @@ describe('ListContainer tests', () => {
   afterEach(cleanup);
 
   test('Renders', () => {
-    const { container } = render(<ListContainer initialState={initialState} />);
+    const { container } = render(
+      <ListRouteHandler initialState={initialState} />
+    );
     expect(container.firstChild).not.toBeNull();
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -37,7 +39,7 @@ describe('ListContainer tests', () => {
     });
 
     const { getByText, queryByText } = render(
-      <ListContainer initialState={initialState} />
+      <ListRouteHandler initialState={initialState} />
     );
     expect(queryByText('ELOINA')).not.toBeNull();
 
@@ -57,7 +59,7 @@ describe('ListContainer tests', () => {
     });
 
     const { getByText, queryByText } = render(
-      <ListContainer initialState={initialState} />
+      <ListRouteHandler initialState={initialState} />
     );
     expect(queryByText('ELOINA')).not.toBeNull();
 
@@ -77,7 +79,7 @@ describe('ListContainer tests', () => {
     });
 
     const { getByText, queryByText } = render(
-      <ListContainer initialState={initialState} />
+      <ListRouteHandler initialState={initialState} />
     );
     expect(queryByText('SALINAS-VAZQUEZ')).not.toBeNull();
 
@@ -97,7 +99,7 @@ describe('ListContainer tests', () => {
     });
 
     const { getByText, queryByText } = render(
-      <ListContainer initialState={initialState} />
+      <ListRouteHandler initialState={initialState} />
     );
     expect(queryByText('10001')).not.toBeNull();
 
@@ -117,7 +119,7 @@ describe('ListContainer tests', () => {
     });
 
     const { getByText, queryByText } = render(
-      <ListContainer initialState={initialState} />
+      <ListRouteHandler initialState={initialState} />
     );
     expect(queryByText('LUIS RAMON')).not.toBeNull();
 
@@ -137,7 +139,7 @@ describe('ListContainer tests', () => {
     });
 
     const { getByText, queryByText } = render(
-      <ListContainer initialState={initialState} />
+      <ListRouteHandler initialState={initialState} />
     );
     expect(queryByText('Candidate')).not.toBeNull();
 
@@ -149,5 +151,30 @@ describe('ListContainer tests', () => {
 
     expect(queryByText('Candidate')).toBeNull();
     expect(queryByText('On leave')).not.toBeNull();
+  });
+
+  test('Static load data', async () => {
+    const result = await ListRouteHandler.loadData();
+    expect(result).toEqual({
+      data: initialState.data
+    });
+  });
+
+  test('Static load data fails', async () => {
+    mockService.getEmployees.mockImplementationOnce(async () => {
+      return Promise.reject(new Error('boom'));
+    });
+    const firstResult = await ListRouteHandler.loadData();
+    expect(firstResult).toEqual({
+      data: initialState.data
+    });
+    const secondResult = await ListRouteHandler.loadData();
+    expect(secondResult).toEqual({});
+  });
+
+  test('Renders empty data by default', () => {
+    const { container, queryByText } = render(<ListRouteHandler />);
+    expect(container.firstChild).not.toBeNull();
+    expect(queryByText('ELOINA')).toBeNull();
   });
 });

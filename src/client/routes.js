@@ -1,11 +1,11 @@
-import ListContainer from './containers/ListContainer';
+import ListRouteHandler from './containers/ListRouteHandler';
 
 const routes = [
-    {
-        key: 'list',
-        path: '/',
-        component: ListContainer
-    }
+  {
+    key: 'list',
+    path: '/',
+    component: ListRouteHandler
+  }
 ];
 
 export default routes;

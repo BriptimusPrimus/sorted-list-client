@@ -4,6 +4,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const serialize = require('serialize-javascript');
 const ssrComponentTree = require('../../../dist/server').default;
 
 const router = express.Router();
@@ -22,9 +23,9 @@ async function renderMarkup(html, initialState) {
         .replace('<div id="root"></div>', `<div id="root">${html}</div>`)
         .replace(
           '<script data-role="initial-state"></script>',
-          `<script>window.__INITIAL_STATE__ = ${JSON.stringify(
-            initialState
-          )}</script>`
+          `<script>window.__INITIAL_STATE__ = ${serialize(initialState, {
+            isJSON: true
+          })}</script>`
         );
       resolve(markup);
     });
