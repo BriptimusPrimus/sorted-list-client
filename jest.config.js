@@ -5,8 +5,10 @@ module.exports = {
     'src/**/*.js',
     '!src/client/index.js',
     '!src/client/routes.js',
+    '!src/client/ssr.js',
     '!src/client/containers/App.js',
     '!src/client/services/**',
+    '!src/server/routes/pages.js',
     '!src/server/services/**',
     '!src/server/middleware/**'
   ],

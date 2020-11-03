@@ -1,29 +1,10 @@
-import React, { useReducer, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import MainView from '../components/MainView';
-import { sortByColumn, receiveData } from '../actions';
-import reducer from '../reducers';
+import { sortByColumn, receiveData, receiveDataError } from '../actions';
 import { getEmployees } from '../services/data';
 
-const ListContainer = ({ initialState }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  useEffect(() => {
-    // trigger initial request to the server
-    const fetchOpts = {
-      sortBy: state.sortBy
-    };
-    getEmployees(fetchOpts)
-      .then(function fullfilled(data) {
-        dispatch(receiveData(data));
-      })
-      .catch(function rejected(reason) {
-        // dispatch(receiveDataError(reason));
-        console.log('response error:', reason);
-        console.log('state:', state);
-      });
-  }, []); // This effect never re-runs
-
+const ListContainer = ({ state, dispatch }) => {
   const onSetSortColumn = (column, orderDesc) => {
     const fetchOpts = {
       sortBy: {
@@ -37,7 +18,7 @@ const ListContainer = ({ initialState }) => {
         dispatch(receiveData(data));
       })
       .catch(function rejected(reason) {
-        console.log('response error:', reason);
+        dispatch(receiveDataError(reason));
       });
   };
 
@@ -53,7 +34,7 @@ const ListContainer = ({ initialState }) => {
 export default ListContainer;
 
 ListContainer.propTypes = {
-  initialState: PropTypes.shape({
+  state: PropTypes.shape({
     data: PropTypes.shape({
       list: PropTypes.arrayOf(
         PropTypes.shape({
@@ -70,17 +51,11 @@ ListContainer.propTypes = {
       column: PropTypes.string,
       orderDesc: PropTypes.bool
     })
-  })
+  }),
+  dispatch: PropTypes.func
 };
 
 ListContainer.defaultProps = {
-  initialState: {
-    data: {
-      list: []
-    },
-    sortBy: {
-      column: 'code',
-      orderDesc: false
-    }
-  }
+  state: {},
+  dispatch: () => {}
 };

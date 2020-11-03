@@ -4,7 +4,7 @@ import config from '../../../config';
 
 const apiEndpoint = `${config.data_service.api.protocol}://${config.data_service.api.host}:${config.data_service.api.port}/${config.data_service.api.root}/`;
 
-const getRequest = async function getRequest1(endpoint) {
+const getRequest = async function getRequest(endpoint) {
   const requestConf = {
     method: 'GET',
     mode: 'cors',
@@ -42,7 +42,7 @@ const mapFields = function mapFields() {
 const getEmployees = function getEmployees(options = {}) {
   const fieldMapper = mapFields();
   const sortBy = options.sortBy || {
-    column: 'name'
+    column: 'code'
   };
 
   const params = {
