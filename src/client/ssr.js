@@ -13,12 +13,13 @@ const ssrComponentTree = async function ssrComponentTree(url, path) {
     return matchPath(path, route);
   });
 
-  const data = curRoute && curRoute.component && curRoute.component.loadData ?
-    await curRoute.component.loadData() :
-    {};
+  const preloadedState =
+    curRoute && curRoute.component && curRoute.component.loadData
+      ? await curRoute.component.loadData()
+      : {};
 
   const initialState = {
-    data
+    ...preloadedState
   };
 
   const html = ReactDOMServer.renderToString(

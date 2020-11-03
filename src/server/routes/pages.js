@@ -8,7 +8,7 @@ const ssrComponentTree = require('../../../dist/server').default;
 
 const router = express.Router();
 
-async function renderMarkup(html) {
+async function renderMarkup(html, initialState) {
   return new Promise((resolve, reject) => {
     const indexFile = path.join(__dirname, '../../../dist/public/index.html');
     fs.readFile(indexFile, 'utf8', (err, data) => {
@@ -18,10 +18,14 @@ async function renderMarkup(html) {
         return;
       }
 
-      const markup = data.replace(
-        '<div id="root"></div>',
-        `<div id="root">${html}</div>`
-      );
+      const markup = data
+        .replace('<div id="root"></div>', `<div id="root">${html}</div>`)
+        .replace(
+          '<script data-role="initial-state"></script>',
+          `<script>window.__INITIAL_STATE__ = ${JSON.stringify(
+            initialState
+          )}</script>`
+        );
       resolve(markup);
     });
   });
@@ -31,7 +35,6 @@ async function renderMarkup(html) {
 router.get('/', async function handleRender(req, res, next) {
   try {
     const { html, initialState } = await ssrComponentTree(req.url, req.path);
-    console.log('initialState:', initialState);
     const fullMarkup = await renderMarkup(html, initialState);
     res.status(200).send(fullMarkup);
   } catch (err) {

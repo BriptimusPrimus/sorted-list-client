@@ -3,6 +3,7 @@
  */
 
 export const RECEIVE_DATA = 'RECEIVE_DATA';
+export const RECEIVE_DATA_ERROR = 'RECEIVE_DATA_ERROR';
 export const SORT_BY_COLUMN = 'SORT_BY_COLUMN';
 
 /*
@@ -13,6 +14,13 @@ export function receiveData(data) {
   return {
     type: RECEIVE_DATA,
     data
+  };
+}
+
+export function receiveDataError(reason) {
+  return {
+    type: RECEIVE_DATA_ERROR,
+    reason
   };
 }
 

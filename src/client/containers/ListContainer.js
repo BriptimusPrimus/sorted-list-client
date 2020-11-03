@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import MainView from '../components/MainView';
-import { sortByColumn, receiveData } from '../actions';
+import { sortByColumn, receiveData, receiveDataError } from '../actions';
 import reducer from '../reducers';
 import { getEmployees } from '../services/data';
 
@@ -18,8 +18,8 @@ const ListContainer = ({ initialState }) => {
         dispatch(receiveData(data));
       })
       .catch(function rejected(reason) {
-        // dispatch(receiveDataError(reason));
-        console.log('response error:', reason);
+        dispatch(receiveDataError(reason));
+        console.error('response error:', reason);
         console.log('state:', state);
       });
   }, []); // This effect never re-runs
@@ -37,7 +37,7 @@ const ListContainer = ({ initialState }) => {
         dispatch(receiveData(data));
       })
       .catch(function rejected(reason) {
-        console.log('response error:', reason);
+        console.error('response error:', reason);
       });
   };
 
@@ -51,6 +51,22 @@ const ListContainer = ({ initialState }) => {
 };
 
 export default ListContainer;
+
+ListContainer.loadData = async function loadData() {
+  try {
+    const data = await getEmployees({
+      sortBy: {
+        column: 'code',
+        orderDesc: true
+      }
+    });
+    return {
+      data
+    };
+  } catch (err) {
+    return {};
+  }
+};
 
 ListContainer.propTypes = {
   initialState: PropTypes.shape({
@@ -83,8 +99,4 @@ ListContainer.defaultProps = {
       orderDesc: false
     }
   }
-};
-
-ListContainer.loadData = function loadData() {
-  return getEmployees();
 };
