@@ -22,14 +22,10 @@ const ListRouteHandler = ({ initialState }) => {
 
 // Override loadData
 ListRouteHandler.loadData = async function preloadData(params) {
-  try {
-    const data = await ListWithUniversalLoad.loadData(params);
-    return {
-      data
-    };
-  } catch (err) {
-    return {};
-  }
+  const data = await ListWithUniversalLoad.loadData(params);
+  return {
+    data
+  };
 };
 
 export default ListRouteHandler;

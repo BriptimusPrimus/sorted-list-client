@@ -8,7 +8,7 @@ const conf = {
       host: 'localhost',
       user: 'myusr',
       password: '123456',
-      database: 'sorted_list'  
+      database: 'sorted_list'
     },
     timeout: 20000
   }
@@ -77,7 +77,7 @@ function executeOne(sqlQry, callback) {
 function getAllpersons(callback) {
   const sqlQry = `
     SELECT
-      p.idpersona,
+        p.idpersona,
         p.idmunicipio,
         p.nombre,
         p.apaterno,
@@ -98,6 +98,35 @@ function getAllpersons(callback) {
   });
 }
 
+function getAllAdditionalData(callback) {
+  const sqlQry = `
+    SELECT
+        p.iddatosdepersona,
+        p.idpersona,
+        p.fechanac,
+        p.edocivil,
+        p.curp,
+        p.sexo,
+        p.nacionalidad,
+        p.email,
+        p.telefono1,
+        p.ife,
+        p.lugaranhocasamiento,
+        p.tieneinfonavit,
+        p.creditoinfonavit,
+        p.tipoinfonavit,
+        p.descuentoinfonavit
+    FROM datosdepersona p;
+  `;
+
+  executeOne(sqlQry, function(err, rows) {
+    if (err) {
+      return callback(err);
+    }
+    return callback(null, rows);
+  });
+}
+
 function read(callback) {
   getAllpersons(function(err, rows) {
     if (err) {
@@ -105,6 +134,38 @@ function read(callback) {
     }
     callback(null, rows);
   });
+}
+
+function readAdditionalData(callback) {
+  getAllAdditionalData(function(err, rows) {
+    if (err) {
+      return callback(err);
+    }
+    callback(null, rows);
+  });
+}
+
+function writeToFile(fileName, rows, callback) {
+  const FILE_NAME = fileName;
+  const obj = {
+    rows: rows
+  }
+  const json = JSON.stringify(obj);
+
+  fs.writeFile(FILE_NAME, json, 'utf8', onWriteFile);
+
+  function onWriteFile(err, data) {
+    if (err) {
+      return callback(err);
+    }
+    console.log('Written in file:');
+    console.log(data);
+    callback(null);
+  }
+}
+
+function writeAdditionalData(rows, callback) {
+  writeToFile('datosdepersona.json', rows, callback);
 }
 
 function write(rows, callback) {
@@ -129,6 +190,7 @@ function write(rows, callback) {
 function run() {
   const beg = Date.now();
 
+  // read from table persona
   read(onRead);
 
   function onRead(err, rows) {
@@ -148,6 +210,15 @@ function run() {
     const end = Date.now();
     console.log('time:', (end - beg));
   }
+
+  // read from table datosdepersona
+  readAdditionalData(function onReadAdditionalData(err, rows) {
+    if (err) {
+      new Error('Read error:', err);
+      return;
+    }
+    writeAdditionalData(rows, onWrite);
+  });
 }
 
 run();
