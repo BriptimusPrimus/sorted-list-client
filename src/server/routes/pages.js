@@ -33,9 +33,27 @@ async function renderMarkup(html, initialState) {
 }
 
 /* Server side rendered page. */
-router.get('/', async function handleRender(req, res, next) {
+router.get('/list', async function handleRender(req, res, next) {
+  const { sort, order } = req.query;
+  const loadDataParams = {
+    sortBy: {
+      column: (() => ({
+        firstName: 'name',
+        surname: 'surname',
+        codeNumber: 'code',
+        rfc: 'rfc',
+        status: 'status'
+      }))()[sort],
+      orderDesc: order === 'DESC'
+    }
+  };
+
   try {
-    const { html, initialState } = await ssrComponentTree(req.url, req.path);
+    const { html, initialState } = await ssrComponentTree({
+      url: req.url,
+      path: req.path,
+      loadDataParams
+    });
     const fullMarkup = await renderMarkup(html, initialState);
     res.status(200).send(fullMarkup);
   } catch (err) {

@@ -8,17 +8,22 @@ import routes from './routes';
 import App from './containers/App';
 
 /* Resolves server side rendered markup and state. */
-const ssrComponentTree = async function ssrComponentTree(url, path) {
+const ssrComponentTree = async function ssrComponentTree({
+  url,
+  path,
+  loadDataParams
+}) {
   const curRoute = routes.find(route => {
     return matchPath(path, route);
   });
 
   const preloadedState =
     curRoute && curRoute.component && curRoute.component.loadData
-      ? await curRoute.component.loadData()
+      ? await curRoute.component.loadData(loadDataParams)
       : {};
 
   const initialState = {
+    ...loadDataParams,
     ...preloadedState
   };
 

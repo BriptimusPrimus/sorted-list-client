@@ -8,9 +8,18 @@ const withUniversalLoad = function withUniversalLoad(
   const withUniversalLoadComponent = ({ initialState }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const fetchOpts = Object.keys(dataSourceParams).reduce((res, key) => {
+      return {
+        ...res,
+        [key]: dataSourceParams[key].inState
+          ? state[key]
+          : dataSourceParams[key].value
+      };
+    }, {});
+
     useEffect(() => {
       // trigger initial request to the server
-      dataSource(dataSourceParams)
+      dataSource(fetchOpts)
         .then(function fullfilled(data) {
           dispatch(successAction(data));
         })
@@ -24,8 +33,8 @@ const withUniversalLoad = function withUniversalLoad(
     return <WrappedComponent state={state} dispatch={dispatch} />;
   };
 
-  withUniversalLoadComponent.loadData = function loadData() {
-    return dataSource(dataSourceParams);
+  withUniversalLoadComponent.loadData = function loadData(params) {
+    return dataSource(params);
   };
 
   return withUniversalLoadComponent;
