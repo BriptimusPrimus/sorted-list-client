@@ -37,13 +37,16 @@ router.get('/list', async function handleRender(req, res, next) {
   const { sort, order } = req.query;
   const loadDataParams = {
     sortBy: {
-      column: (() => ({
-        firstName: 'name',
-        surname: 'surname',
-        codeNumber: 'code',
-        rfc: 'rfc',
-        status: 'status'
-      }))()[sort],
+      column:
+        (() => ({
+          firstName: 'name',
+          surname: 'surname',
+          codeNumber: 'code',
+          rfc: 'rfc',
+          status: 'status'
+        }))()[sort] ||
+        sort ||
+        'code',
       orderDesc: order === 'DESC'
     }
   };

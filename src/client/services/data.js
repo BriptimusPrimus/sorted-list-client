@@ -47,7 +47,7 @@ const getEmployees = function getEmployees(options = {}) {
 
   const params = {
     count: options.count || config.data_service.defaulCount,
-    sort: fieldMapper[sortBy.column],
+    sort: fieldMapper[sortBy.column] || sortBy.column,
     order: sortBy.orderDesc ? 'DESC' : 'ASC'
   };
 

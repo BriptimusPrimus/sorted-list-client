@@ -160,18 +160,6 @@ describe('ListRouteHandler tests', () => {
     });
   });
 
-  test('Static load data fails', async () => {
-    mockService.getEmployees.mockImplementationOnce(async () => {
-      return Promise.reject(new Error('boom'));
-    });
-    const firstResult = await ListRouteHandler.loadData();
-    expect(firstResult).toEqual({
-      data: initialState.data
-    });
-    const secondResult = await ListRouteHandler.loadData();
-    expect(secondResult).toEqual({});
-  });
-
   test('Renders empty data by default', () => {
     const { container, queryByText } = render(<ListRouteHandler />);
     expect(container.firstChild).not.toBeNull();
