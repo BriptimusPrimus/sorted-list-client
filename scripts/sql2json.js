@@ -169,22 +169,7 @@ function writeAdditionalData(rows, callback) {
 }
 
 function write(rows, callback) {
-  const FILE_NAME = 'persona.json';
-  const obj = {
-    rows: rows
-  }
-  const json = JSON.stringify(obj);
-
-  fs.writeFile(FILE_NAME, json, 'utf8', onWriteFile);
-
-  function onWriteFile(err, data) {
-    if (err) {
-      return callback(err);
-    }
-    console.log('Written in file:');
-    console.log(data);
-    callback(null);
-  }
+  writeToFile('persona.json', rows, callback);
 }
 
 function run() {
