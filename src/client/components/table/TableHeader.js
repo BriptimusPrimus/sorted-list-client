@@ -19,31 +19,31 @@ const TableHeader = ({ sortBy, onSetSortColumn }) => {
     <thead>
       <tr>
         <th
-          className={setColumnSortClass('name')}
+          className={`col-xs-3 ${setColumnSortClass('name')}`}
           onClick={() => onHeaderClick('name')}
         >
           Name
         </th>
         <th
-          className={setColumnSortClass('surname')}
+          className={`col-xs-3 ${setColumnSortClass('surname')}`}
           onClick={() => onHeaderClick('surname')}
         >
           Surname
         </th>
         <th
-          className={setColumnSortClass('code')}
+          className={`col-xs-2 ${setColumnSortClass('code')}`}
           onClick={() => onHeaderClick('code')}
         >
           Code Number
         </th>
         <th
-          className={setColumnSortClass('rfc')}
+          className={`col-xs-2 ${setColumnSortClass('rfc')}`}
           onClick={() => onHeaderClick('rfc')}
         >
           RFC
         </th>
         <th
-          className={setColumnSortClass('status')}
+          className={`col-xs-2 ${setColumnSortClass('status')}`}
           onClick={() => onHeaderClick('status')}
         >
           Status

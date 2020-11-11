@@ -27,27 +27,27 @@ exports[`ListRouteHandler tests Renders 1`] = `
           <thead>
             <tr>
               <th
-                class="text-center actionable"
+                class="col-xs-3 text-center actionable"
               >
                 Name
               </th>
               <th
-                class="text-center actionable"
+                class="col-xs-3 text-center actionable"
               >
                 Surname
               </th>
               <th
-                class="text-center actionable order-asc"
+                class="col-xs-2 text-center actionable order-asc"
               >
                 Code Number
               </th>
               <th
-                class="text-center actionable"
+                class="col-xs-2 text-center actionable"
               >
                 RFC
               </th>
               <th
-                class="text-center actionable"
+                class="col-xs-2 text-center actionable"
               >
                 Status
               </th>
