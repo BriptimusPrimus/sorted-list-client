@@ -9,7 +9,7 @@ const resolveState = function resolveState(initialState) {
       list: []
     },
     sortBy: {
-      column: 'code',
+      column: 'codeNumber',
       orderDesc: false
     }
   };

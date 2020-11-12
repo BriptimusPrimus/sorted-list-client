@@ -29,25 +29,14 @@ const getRequest = async function getRequest(endpoint) {
   return data;
 };
 
-const mapFields = function mapFields() {
-  return {
-    name: 'firstName',
-    surname: 'surname',
-    code: 'codeNumber',
-    rfc: 'rfc',
-    status: 'status'
-  };
-};
-
 const getEmployees = function getEmployees(options = {}) {
-  const fieldMapper = mapFields();
   const sortBy = options.sortBy || {
-    column: 'code'
+    column: 'codeNumber'
   };
 
   const params = {
     count: options.count || config.data_service.defaulCount,
-    sort: fieldMapper[sortBy.column] || sortBy.column,
+    sort: sortBy.column,
     order: sortBy.orderDesc ? 'DESC' : 'ASC'
   };
 

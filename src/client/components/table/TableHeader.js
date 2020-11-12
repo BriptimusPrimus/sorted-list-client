@@ -19,8 +19,8 @@ const TableHeader = ({ sortBy, onSetSortColumn }) => {
     <thead>
       <tr>
         <th
-          className={`col-xs-3 ${setColumnSortClass('name')}`}
-          onClick={() => onHeaderClick('name')}
+          className={`col-xs-3 ${setColumnSortClass('firstName')}`}
+          onClick={() => onHeaderClick('firstName')}
         >
           Name
         </th>
@@ -31,8 +31,8 @@ const TableHeader = ({ sortBy, onSetSortColumn }) => {
           Surname
         </th>
         <th
-          className={`col-xs-2 ${setColumnSortClass('code')}`}
-          onClick={() => onHeaderClick('code')}
+          className={`col-xs-2 ${setColumnSortClass('codeNumber')}`}
+          onClick={() => onHeaderClick('codeNumber')}
         >
           Code Number
         </th>

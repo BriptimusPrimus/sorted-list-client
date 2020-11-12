@@ -18,7 +18,7 @@ describe('ListRouteHandler tests', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    mockService.getEmployees.mockImplementationOnce(async () => {
+    mockService.getEmployees.mockImplementation(async () => {
       return initialState.data;
     });
   });
@@ -34,7 +34,7 @@ describe('ListRouteHandler tests', () => {
   });
 
   test('Sorts column', async () => {
-    mockService.getEmployees.mockImplementationOnce(async () => {
+    mockService.getEmployees.mockImplementation(async () => {
       return sortedByName;
     });
 
@@ -54,7 +54,7 @@ describe('ListRouteHandler tests', () => {
   });
 
   test('Sort column service call fails', async () => {
-    mockService.getEmployees.mockImplementationOnce(async () => {
+    mockService.getEmployees.mockImplementation(async () => {
       return Promise.reject(new Error('boom'));
     });
 
@@ -74,14 +74,14 @@ describe('ListRouteHandler tests', () => {
   });
 
   test('Sorts by surname', async () => {
-    mockService.getEmployees.mockImplementationOnce(async () => {
+    mockService.getEmployees.mockImplementation(async () => {
       return sortedBySurname;
     });
 
     const { getByText, queryByText } = render(
       <ListRouteHandler initialState={initialState} />
     );
-    expect(queryByText('SALINAS-VAZQUEZ')).not.toBeNull();
+    expect(queryByText('SALINAS VAZQUEZ')).not.toBeNull();
 
     const nameHeader = getByText('Surname');
     fireEvent.click(nameHeader);
@@ -89,12 +89,12 @@ describe('ListRouteHandler tests', () => {
     // Wait for AJAX call to be complete
     await waitFor(() => {});
 
-    expect(queryByText('SALINAS-VAZQUEZ')).toBeNull();
-    expect(queryByText('ABAD-MARTINEZ')).not.toBeNull();
+    expect(queryByText('SALINAS VAZQUEZ')).toBeNull();
+    expect(queryByText('ABAD MARTINEZ')).not.toBeNull();
   });
 
   test('Sorts by codeNumber', async () => {
-    mockService.getEmployees.mockImplementationOnce(async () => {
+    mockService.getEmployees.mockImplementation(async () => {
       return sortedByCodeNumberAsc;
     });
 
@@ -114,7 +114,7 @@ describe('ListRouteHandler tests', () => {
   });
 
   test('Sorts by RFC', async () => {
-    mockService.getEmployees.mockImplementationOnce(async () => {
+    mockService.getEmployees.mockImplementation(async () => {
       return sortedByRFC;
     });
 
@@ -134,7 +134,7 @@ describe('ListRouteHandler tests', () => {
   });
 
   test('Sorts by Status', async () => {
-    mockService.getEmployees.mockImplementationOnce(async () => {
+    mockService.getEmployees.mockImplementation(async () => {
       return sortedByStatus;
     });
 
