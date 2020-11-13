@@ -1,4 +1,4 @@
-const { getEmployees } = require('./employees');
+const getEmployees = function getEmployees() {};
 
 // This object implements the bridge interface:
 // interface: {

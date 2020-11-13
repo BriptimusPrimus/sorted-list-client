@@ -1,7 +1,15 @@
 {
-  "database": {
+  "dal": {
     "module": "mocks/mockdb",
-    "file": "employees.json",
-    "mockResponseDelay": 1000
+    "datasources": {
+      "employees": {
+        "file": "employees.json",
+        "mockResponseDelay": 1000
+      },
+      "customers": {
+        "file": "customers.json",
+        "mockResponseDelay": 1000
+      }
+    }
   }
 }

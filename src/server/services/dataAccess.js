@@ -2,7 +2,7 @@
  * Data Access Service Abstraction
  */
 
-const implementationModule = require('../../../config').database.module;
+const implementationModule = require('../../../config').dal.module;
 
 // eslint-disable-next-line import/no-dynamic-require
 const dal = require(`./${implementationModule}`);
