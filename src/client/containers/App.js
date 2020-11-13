@@ -6,7 +6,8 @@ import routes from '../routes';
 const resolveState = function resolveState(initialState) {
   const defaultState = {
     data: {
-      list: []
+      list: [],
+      customers: []
     },
     sortBy: {
       column: 'codeNumber',

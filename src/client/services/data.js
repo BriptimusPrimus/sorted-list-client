@@ -47,4 +47,22 @@ const getEmployees = function getEmployees(options = {}) {
   return getRequest(endpoint);
 };
 
-export { getEmployees };
+const getCustomers = function getCustomers(options = {}) {
+  const sortBy = options.sortBy || {
+    column: 'email'
+  };
+
+  const params = {
+    count: options.count || config.data_service.defaulCount,
+    sort: sortBy.column,
+    order: sortBy.orderDesc ? 'DESC' : 'ASC'
+  };
+
+  const endpoint = `${
+    apiEndpoint + config.data_service.api.customers_data
+  }?${querystring.stringify(params)}`;
+
+  return getRequest(endpoint);
+};
+
+export { getEmployees, getCustomers };

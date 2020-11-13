@@ -33,11 +33,15 @@ async function renderMarkup(html, initialState) {
 }
 
 /* Server side rendered page. */
-router.get('/list', async function handleRender(req, res, next) {
+const handleRender = async function handleRender(req, res, next) {
   const { sort, order } = req.query;
+  const defaultSortColumn = {
+    '/list': 'codeNumber',
+    '/customers': 'email'
+  };
   const loadDataParams = {
     sortBy: {
-      column: sort || 'codeNumber',
+      column: sort || defaultSortColumn[req.path] || 'codeNumber',
       orderDesc: order === 'DESC'
     }
   };
@@ -53,6 +57,9 @@ router.get('/list', async function handleRender(req, res, next) {
   } catch (err) {
     next(err);
   }
-});
+};
+
+router.get('/list', handleRender);
+router.get('/customers', handleRender);
 
 module.exports = router;

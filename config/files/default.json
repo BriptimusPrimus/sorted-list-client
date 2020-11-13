@@ -5,7 +5,8 @@
       "host": "localhost",
       "port": "3000",
       "root": "api",
-      "employees_data": "employees"
+      "employees_data": "employees",
+      "customers_data": "customers"
     },
     "defaulCount": 10
   }
