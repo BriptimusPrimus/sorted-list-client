@@ -9,8 +9,7 @@ const ListWithUniversalLoad = withUniversalLoad(ListContainer, {
   dataSource: getEmployees,
   dataSourceParams: {
     sortBy: {
-      column: 'code',
-      orderDesc: true
+      inState: true
     }
   },
   successAction: receiveData,
@@ -22,15 +21,11 @@ const ListRouteHandler = ({ initialState }) => {
 };
 
 // Override loadData
-ListRouteHandler.loadData = async function preloadData() {
-  try {
-    const data = await ListWithUniversalLoad.loadData();
-    return {
-      data
-    };
-  } catch (err) {
-    return {};
-  }
+ListRouteHandler.loadData = async function preloadData(params) {
+  const data = await ListWithUniversalLoad.loadData(params);
+  return {
+    data
+  };
 };
 
 export default ListRouteHandler;

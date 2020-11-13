@@ -7,7 +7,7 @@
 .table-condensed > thead > tr > th.order-asc {
   padding-right: 12px;
 }
-.order-desc::after {
+.order-asc::after {
   content: '';
   width: 1px;
   height: 1px;
@@ -18,7 +18,7 @@
   top: 10px;
   left: 10px;
 }
-.order-asc::after {
+.order-desc::after {
   content: '';
   width: 1px;
   height: 1px;

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const TableRow = ({ record = {} }) => {
+const TableRow = ({ record }) => {
   const capitalizeFirstLetter = function capitalizeFirstLetter(str) {
     if (!str || str.length < 1) {
       return '';
@@ -12,7 +13,7 @@ const TableRow = ({ record = {} }) => {
     <tr>
       <td className="text-center">{record.firstName}</td>
       <td className="text-center">
-        {record.surname}-{record.surname2}
+        {record.surname} {record.surname2}
       </td>
       <td className="text-center">{record.codeNumber}</td>
       <td className="text-center">{record.rfc}</td>
@@ -22,3 +23,18 @@ const TableRow = ({ record = {} }) => {
 };
 
 export default TableRow;
+
+TableRow.propTypes = {
+  record: PropTypes.shape({
+    firstName: PropTypes.string,
+    surname: PropTypes.string,
+    surname2: PropTypes.string,
+    codeNumber: PropTypes.string,
+    rfc: PropTypes.string,
+    status: PropTypes.string
+  })
+};
+
+TableRow.defaultProps = {
+  record: {}
+};

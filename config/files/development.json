@@ -1,12 +1,12 @@
 {
   "database": {
     "module": "implementations/employeesdb",
-    "conectionOptions": {
+    "connectionOptions": {
       "host": "localhost",
       "user": "myusr",
       "password": "123456",
       "database": "sorted_list"
     },
-    "timeout": 20000
+    "timeout": 5000
   }
 }

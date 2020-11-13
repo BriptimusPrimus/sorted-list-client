@@ -3,7 +3,7 @@ import ListRouteHandler from './containers/ListRouteHandler';
 const routes = [
   {
     key: 'list',
-    path: '/',
+    path: '/list',
     component: ListRouteHandler
   }
 ];

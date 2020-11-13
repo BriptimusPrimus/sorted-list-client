@@ -11,7 +11,7 @@ const TableHeader = ({ sortBy, onSetSortColumn }) => {
   };
 
   const onHeaderClick = function onHeaderClick(column) {
-    const orderDesc = column === sortBy.column ? !sortBy.orderDesc : true;
+    const orderDesc = column === sortBy.column ? !sortBy.orderDesc : false;
     onSetSortColumn(column, orderDesc);
   };
 
@@ -19,31 +19,31 @@ const TableHeader = ({ sortBy, onSetSortColumn }) => {
     <thead>
       <tr>
         <th
-          className={setColumnSortClass('name')}
-          onClick={() => onHeaderClick('name')}
+          className={`col-xs-3 ${setColumnSortClass('firstName')}`}
+          onClick={() => onHeaderClick('firstName')}
         >
           Name
         </th>
         <th
-          className={setColumnSortClass('surname')}
+          className={`col-xs-3 ${setColumnSortClass('surname')}`}
           onClick={() => onHeaderClick('surname')}
         >
           Surname
         </th>
         <th
-          className={setColumnSortClass('code')}
-          onClick={() => onHeaderClick('code')}
+          className={`col-xs-2 ${setColumnSortClass('codeNumber')}`}
+          onClick={() => onHeaderClick('codeNumber')}
         >
           Code Number
         </th>
         <th
-          className={setColumnSortClass('rfc')}
+          className={`col-xs-2 ${setColumnSortClass('rfc')}`}
           onClick={() => onHeaderClick('rfc')}
         >
           RFC
         </th>
         <th
-          className={setColumnSortClass('status')}
+          className={`col-xs-2 ${setColumnSortClass('status')}`}
           onClick={() => onHeaderClick('status')}
         >
           Status

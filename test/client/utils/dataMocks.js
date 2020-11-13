@@ -95,7 +95,7 @@ const getInitialState = () => {
       ]
     },
     sortBy: {
-      column: 'code',
+      column: 'codeNumber',
       orderDesc: false
     }
   };
