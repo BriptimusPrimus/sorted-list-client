@@ -3,6 +3,7 @@
  */
 
 const express = require('express');
+const customersController = require('../controllers/customers');
 const employeesController = require('../controllers/employees');
 
 const router = express.Router();
@@ -14,6 +15,8 @@ router.get('/', function dummy(req, res) {
     data: 'Hello World!'
   });
 });
+
+router.get('/customers', customersController.getCustomers);
 
 router.get('/employees', employeesController.getList);
 
