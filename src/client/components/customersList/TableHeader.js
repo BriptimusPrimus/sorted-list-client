@@ -34,7 +34,7 @@ const TableHeader = ({ sortBy, onSetSortColumn }) => {
           className={`col-xs-3 ${setColumnSortClass('surname')}`}
           onClick={() => onHeaderClick('surname')}
         >
-          Surname
+          Last Name
         </th>
         <th
           className={`col-xs-1 ${setColumnSortClass('isActive')}`}

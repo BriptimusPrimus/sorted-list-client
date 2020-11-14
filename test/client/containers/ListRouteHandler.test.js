@@ -6,7 +6,7 @@ import {
   getInitialState,
   sortedByName,
   sortedBySurname,
-  sortedByCodeNumberAsc,
+  sortedByCodeNumberDesc,
   sortedByRFC,
   sortedByStatus
 } from '../utils/dataMocks';
@@ -95,7 +95,7 @@ describe('ListRouteHandler tests', () => {
 
   test('Sorts by codeNumber', async () => {
     mockService.getEmployees.mockImplementation(async () => {
-      return sortedByCodeNumberAsc;
+      return sortedByCodeNumberDesc;
     });
 
     const { getByText, queryByText } = render(
