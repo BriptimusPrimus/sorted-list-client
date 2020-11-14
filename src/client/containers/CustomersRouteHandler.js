@@ -2,16 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { receiveData, receiveDataError } from '../actions';
 import { getCustomers } from '../services/data';
+import CustomersContainer from './CustomersContainer';
 import withUniversalLoad from '../lib/withUniversalLoad';
-
-const CustomersContainer = () => {
-  return (
-    <>
-      <h1>Customers</h1>
-      <p>Hello</p>
-    </>
-  );
-};
 
 const CustomersWithUniversalLoad = withUniversalLoad(CustomersContainer, {
   dataSource: getCustomers,
@@ -67,7 +59,7 @@ CustomersRouteHandler.defaultProps = {
       customers: []
     },
     sortBy: {
-      column: 'code',
+      column: 'email',
       orderDesc: false
     }
   }
