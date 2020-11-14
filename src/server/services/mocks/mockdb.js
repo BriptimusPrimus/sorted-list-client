@@ -1,5 +1,5 @@
 const { getEmployees } = require('./employees');
-const { getCustomers } = require('./customers');
+const { getCustomer, getCustomers } = require('./customers');
 
 // This object implements the bridge interface:
 // interface: {
@@ -7,6 +7,7 @@ const { getCustomers } = require('./customers');
 //   getEmployees: async function(options){}
 // }
 module.exports = {
+  getCustomer,
   getCustomers,
   getEmployees
 };

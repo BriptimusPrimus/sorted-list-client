@@ -9,6 +9,10 @@
       "customers": {
         "file": "customers.json",
         "mockResponseDelay": 1000
+      },
+      "addresses": {
+        "file": "addresses.json",
+        "mockResponseDelay": 1000
       }
     }
   }

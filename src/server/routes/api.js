@@ -16,6 +16,8 @@ router.get('/', function dummy(req, res) {
   });
 });
 
+router.get('/customer/:id', customersController.getCustomerDetails);
+
 router.get('/customers', customersController.getCustomers);
 
 router.get('/employees', employeesController.getList);

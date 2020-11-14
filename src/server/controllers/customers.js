@@ -29,9 +29,31 @@ const getCustomers = async function getCustomers(req, res, next) {
   }
 };
 
-// const getCustomerDetails = async function getCustomerDetails() {};
+const getCustomerDetails = async function getCustomerDetails(req, res, next) {
+  const { id } = req.params;
+  try {
+    const response = await dataAccess.getCustomerDetails(id);
+    if (response.success && response.data) {
+      res.status(200).json({
+        customerDetails: response.data
+      });
+      return;
+    }
+
+    if (response.success && response.noDataFound) {
+      res.status(404).json({});
+      return;
+    }
+
+    res.status(500).json({
+      errMessage: response.reason
+    });
+  } catch (err) {
+    next(err);
+  }
+};
 
 module.exports = {
-  getCustomers
-  // getCustomerDetails
+  getCustomers,
+  getCustomerDetails
 };
