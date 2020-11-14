@@ -7,12 +7,14 @@ const resolveState = function resolveState(initialState) {
   const defaultState = {
     data: {
       list: [],
-      customers: []
+      customers: [],
+      customerDetails: {}
     },
     sortBy: {
       column: 'codeNumber',
       orderDesc: false
-    }
+    },
+    customerId: 0
   };
   return {
     ...defaultState,

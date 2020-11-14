@@ -65,4 +65,12 @@ const getCustomers = function getCustomers(options = {}) {
   return getRequest(endpoint);
 };
 
-export { getEmployees, getCustomers };
+const getCustomerDetails = function getCustomerDetails({ customerId } = {}) {
+  const endpoint = `${
+    apiEndpoint + config.data_service.api.customer_details
+  }/${customerId}`;
+
+  return getRequest(endpoint);
+};
+
+export { getEmployees, getCustomers, getCustomerDetails };

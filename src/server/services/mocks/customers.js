@@ -87,7 +87,7 @@ const addressMapFields = function addressMapFields(obj) {
     district: obj.district,
     city: obj.city,
     country: obj.country,
-    postal_code: obj.postal_code,
+    postalCode: obj.postal_code,
     phone: obj.phone,
     addressLastUpdate: obj.last_update
   };

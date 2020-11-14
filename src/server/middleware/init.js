@@ -13,6 +13,10 @@ module.exports = function init(app) {
     '/static',
     express.static(path.join(__dirname, '../../../dist/public'))
   );
+  app.use(
+    '/customer/static',
+    express.static(path.join(__dirname, '../../../dist/public'))
+  );
 
   app.use(morganLogger('dev'));
   // parse application/json

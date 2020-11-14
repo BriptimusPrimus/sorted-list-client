@@ -33,7 +33,7 @@ async function renderMarkup(html, initialState) {
 }
 
 /* Server side rendered page. */
-const handleRender = async function handleRender(req, res, next) {
+const handleRenderList = async function handleRenderList(req, res, next) {
   const { sort, order } = req.query;
   const defaultSortColumn = {
     '/list': 'codeNumber',
@@ -59,7 +59,29 @@ const handleRender = async function handleRender(req, res, next) {
   }
 };
 
-router.get('/list', handleRender);
-router.get('/customers', handleRender);
+/* Server side rendered page. */
+const handleRenderDetails = async function handleRenderDetails(req, res, next) {
+  const { id } = req.params;
+  const customerId = Number.isNaN(Number(id)) ? 0 : Number(id);
+  const loadDataParams = {
+    customerId
+  };
+
+  try {
+    const { html, initialState } = await ssrComponentTree({
+      url: req.url,
+      path: req.path,
+      loadDataParams
+    });
+    const fullMarkup = await renderMarkup(html, initialState);
+    res.status(200).send(fullMarkup);
+  } catch (err) {
+    next(err);
+  }
+};
+
+router.get('/list', handleRenderList);
+router.get('/customers', handleRenderList);
+router.get('/customer/:id', handleRenderDetails);
 
 module.exports = router;

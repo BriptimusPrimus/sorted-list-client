@@ -6,7 +6,8 @@
       "port": "3000",
       "root": "api",
       "employees_data": "employees",
-      "customers_data": "customers"
+      "customers_data": "customers",
+      "customer_details": "customer"
     },
     "defaulCount": 10
   }

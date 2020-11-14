@@ -1,5 +1,6 @@
 import ListRouteHandler from './containers/ListRouteHandler';
 import CustomersRouteHandler from './containers/CustomersRouteHandler';
+import CustomerDetailsRouteHandler from './containers/CustomerDetailsRouteHandler';
 
 const routes = [
   {
@@ -11,6 +12,11 @@ const routes = [
     key: 'customers',
     path: '/customers',
     component: CustomersRouteHandler
+  },
+  {
+    key: 'customer',
+    path: '/customer',
+    component: CustomerDetailsRouteHandler
   }
 ];
 
