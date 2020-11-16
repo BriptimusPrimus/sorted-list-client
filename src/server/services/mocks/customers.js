@@ -97,7 +97,9 @@ const pickFields = function pickFields(list) {
   return list.map(customerMapFields);
 };
 
-const getCustomer = async function getCustomer(customerId) {
+const getCustomer = async function getCustomer(id) {
+  const customerId = Number.isNaN(Number(id)) ? 0 : Number(id);
+
   // Test failure scenario
   if (customerId === 0) {
     throw new Error('Mock DAL error');

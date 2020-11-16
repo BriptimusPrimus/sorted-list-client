@@ -62,9 +62,8 @@ const handleRenderList = async function handleRenderList(req, res, next) {
 /* Server side rendered page. */
 const handleRenderDetails = async function handleRenderDetails(req, res, next) {
   const { id } = req.params;
-  const customerId = Number.isNaN(Number(id)) ? 0 : Number(id);
   const loadDataParams = {
-    customerId
+    customerId: id
   };
 
   try {

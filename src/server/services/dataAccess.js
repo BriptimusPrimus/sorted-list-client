@@ -8,9 +8,8 @@ const implementationModule = require('../../../config').dal.module;
 const dal = require(`./${implementationModule}`);
 
 const getCustomerDetails = async function getCustomerDetails(id) {
-  const customerId = Number.isNaN(Number(id)) ? 0 : Number(id);
   try {
-    const data = await dal.getCustomer(customerId);
+    const data = await dal.getCustomer(id);
 
     // Customer not exist
     if (data === undefined) {

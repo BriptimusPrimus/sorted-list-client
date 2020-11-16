@@ -48,7 +48,7 @@ const fetchCustomerFromSource = async function fetchCustomersFromSource(
             ON a.city_id = i.city_id
         LEFT JOIN country o
             ON i.country_id = o.country_id
-        WHERE u.customer_id = ${customerId};`;
+        WHERE u.customer_id = '${customerId}';`;
 
   const rows = await makeQuery(sqlQry);
   if (!rows || !rows.length) {
