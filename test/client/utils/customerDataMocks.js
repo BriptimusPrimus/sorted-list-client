@@ -111,6 +111,25 @@ const getInitialState = () => {
   };
 };
 
+const customerDetails = {
+  id: 42,
+  firstName: 'CAROLYN',
+  surname: 'PEREZ',
+  email: 'CAROLYN.PEREZ@sakilacustomer.org',
+  addressId: 46,
+  isActive: true,
+  createDate: '2006-02-15T06:04:36.000Z',
+  lastUpdate: '2006-02-15T12:57:20.000Z',
+  address: '1632 Bislig Avenue',
+  address2: '',
+  district: 'Nonthaburi',
+  city: 'Pak Kret',
+  country: 'Thailand',
+  postalCode: '61117',
+  phone: '471675840679',
+  addressLastUpdate: '2014-09-26T05:33:20.000Z'
+};
+
 const sortedByEmailDesc = {
   customers: [
     {
@@ -533,6 +552,7 @@ const sortByCreateDate = {
 
 export {
   getInitialState,
+  customerDetails,
   sortedByEmailDesc,
   sortedBySurname,
   sortedByIsActive,

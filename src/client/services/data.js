@@ -14,6 +14,13 @@ const getRequest = async function getRequest(endpoint) {
   };
 
   const response = await fetch(endpoint, requestConf);
+
+  if (response.status === 404) {
+    return {
+      notFound: true
+    };
+  }
+
   if (response.status !== 200) {
     return {
       error: 'Service Failure',

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/app.css';
-import DataTable from './customersList/DataTable';
+import '../../css/app.css';
+import DataTable from './DataTable';
 
 const CustomersView = ({ data, sortBy, onSetSortColumn }) => {
   return (

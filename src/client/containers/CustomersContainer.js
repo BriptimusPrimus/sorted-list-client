@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CustomersView from '../components/CustomersView';
+import CustomersView from '../components/customersList/CustomersView';
 import { sortByColumn, receiveData, receiveDataError } from '../actions';
 import { getCustomers } from '../services/data';
 
