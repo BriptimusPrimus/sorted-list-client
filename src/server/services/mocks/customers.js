@@ -143,7 +143,7 @@ const getCustomers = async function getCustomers(opts) {
 
 // This object implements the bridge interface:
 // interface: {
-//   getCustomer: async function(options){}
+//   getCustomer: async function(customerId){}
 //   getCustomers: async function(options){}
 // }
 module.exports = {
