@@ -67,7 +67,7 @@ router.get('/customers', function renderCustomers(req, res, next) {
   const { sort, order } = req.query;
   const loadDataParams = {
     sortBy: {
-      column: sort || 'email',
+      column: sort || 'id',
       orderDesc: order === 'DESC'
     }
   };

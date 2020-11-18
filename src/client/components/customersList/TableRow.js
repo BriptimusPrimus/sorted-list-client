@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const formatId = id => `00000${id}`.slice(-5);
+
+const formatDate = date => (date && date.slice(0, 10)) || '';
+
 const TableRow = ({ record }) => {
   return (
     <tr>
-      <td className="text-center">{record.email}</td>
+      <td className="text-center">{formatId(record.id)}</td>
       <td className="text-center">{record.firstName}</td>
       <td className="text-center">{record.surname}</td>
       <td className="text-center">{record.isActive ? 'YES' : 'NO'}</td>
-      <td className="text-center">{record.createDate}</td>
+      <td className="text-center">{formatDate(record.createDate)}</td>
     </tr>
   );
 };

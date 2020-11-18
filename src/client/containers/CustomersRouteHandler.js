@@ -59,7 +59,7 @@ CustomersRouteHandler.defaultProps = {
       customers: []
     },
     sortBy: {
-      column: 'email',
+      column: 'id',
       orderDesc: false
     }
   }

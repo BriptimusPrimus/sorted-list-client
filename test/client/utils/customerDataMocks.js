@@ -3,109 +3,109 @@ const getInitialState = () => {
     data: {
       customers: [
         {
-          addressId: 380,
-          createDate: '2006-02-15T06:04:37.000Z',
-          email: 'AARON.SELBY@sakilacustomer.org',
-          firstName: 'AARON',
-          id: 375,
+          id: 1,
+          firstName: 'MARY',
+          surname: 'SMITH',
+          email: 'MARY.SMITH@sakilacustomer.org',
+          addressId: 5,
           isActive: true,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'SELBY'
-        },
-        {
-          addressId: 372,
-          createDate: '2006-02-15T06:04:37.000Z',
-          email: 'ADAM.GOOCH@sakilacustomer.org',
-          firstName: 'ADAM',
-          id: 367,
-          isActive: true,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'GOOCH'
-        },
-        {
-          addressId: 531,
-          createDate: '2006-02-15T06:04:37.000Z',
-          email: 'ADRIAN.CLARY@sakilacustomer.org',
-          firstName: 'ADRIAN',
-          id: 525,
-          isActive: true,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'CLARY'
-        },
-        {
-          addressId: 221,
           createDate: '2006-02-15T06:04:36.000Z',
-          email: 'AGNES.BISHOP@sakilacustomer.org',
-          firstName: 'AGNES',
-          id: 217,
-          isActive: true,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'BISHOP'
+          lastUpdate: '2006-02-15T12:57:20.000Z'
         },
         {
-          addressId: 394,
-          createDate: '2006-02-15T06:04:37.000Z',
-          email: 'ALAN.KAHN@sakilacustomer.org',
-          firstName: 'ALAN',
-          id: 389,
+          id: 2,
+          firstName: 'PATRICIA',
+          surname: 'JOHNSON',
+          email: 'PATRICIA.JOHNSON@sakilacustomer.org',
+          addressId: 6,
           isActive: true,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'KAHN'
+          createDate: '2006-02-15T06:04:36.000Z',
+          lastUpdate: '2006-02-15T12:57:20.000Z'
         },
         {
-          addressId: 357,
-          createDate: '2006-02-15T06:04:37.000Z',
-          email: 'ALBERT.CROUSE@sakilacustomer.org',
-          firstName: 'ALBERT',
-          id: 352,
+          id: 3,
+          firstName: 'LINDA',
+          surname: 'WILLIAMS',
+          email: 'LINDA.WILLIAMS@sakilacustomer.org',
+          addressId: 7,
           isActive: true,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'CROUSE'
+          createDate: '2006-02-15T06:04:36.000Z',
+          lastUpdate: '2006-02-15T12:57:20.000Z'
         },
         {
-          addressId: 574,
-          createDate: '2006-02-15T06:04:37.000Z',
-          email: 'ALBERTO.HENNING@sakilacustomer.org',
-          firstName: 'ALBERTO',
-          id: 568,
+          id: 4,
+          firstName: 'BARBARA',
+          surname: 'JONES',
+          email: 'BARBARA.JONES@sakilacustomer.org',
+          addressId: 8,
           isActive: true,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'HENNING'
+          createDate: '2006-02-15T06:04:36.000Z',
+          lastUpdate: '2006-02-15T12:57:20.000Z'
         },
         {
-          addressId: 459,
-          createDate: '2006-02-15T06:04:37.000Z',
-          email: 'ALEX.GRESHAM@sakilacustomer.org',
-          firstName: 'ALEX',
-          id: 454,
-          isActive: false,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'GRESHAM'
+          id: 5,
+          firstName: 'ELIZABETH',
+          surname: 'BROWN',
+          email: 'ELIZABETH.BROWN@sakilacustomer.org',
+          addressId: 9,
+          isActive: true,
+          createDate: '2006-02-15T06:04:36.000Z',
+          lastUpdate: '2006-02-15T12:57:20.000Z'
         },
         {
-          addressId: 444,
-          createDate: '2006-02-15T06:04:37.000Z',
-          email: 'ALEXANDER.FENNELL@sakilacustomer.org',
-          firstName: 'ALEXANDER',
-          id: 439,
+          id: 6,
+          firstName: 'JENNIFER',
+          surname: 'DAVIS',
+          email: 'JENNIFER.DAVIS@sakilacustomer.org',
+          addressId: 10,
           isActive: true,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'FENNELL'
+          createDate: '2006-02-15T06:04:36.000Z',
+          lastUpdate: '2006-02-15T12:57:20.000Z'
         },
         {
-          addressId: 428,
-          createDate: '2006-02-15T06:04:37.000Z',
-          email: 'ALFRED.CASILLAS@sakilacustomer.org',
-          firstName: 'ALFRED',
-          id: 423,
+          id: 7,
+          firstName: 'MARIA',
+          surname: 'MILLER',
+          email: 'MARIA.MILLER@sakilacustomer.org',
+          addressId: 11,
           isActive: true,
-          lastUpdate: '2006-02-15T12:57:20.000Z',
-          surname: 'CASILLAS'
+          createDate: '2006-02-15T06:04:36.000Z',
+          lastUpdate: '2006-02-15T12:57:20.000Z'
+        },
+        {
+          id: 8,
+          firstName: 'SUSAN',
+          surname: 'WILSON',
+          email: 'SUSAN.WILSON@sakilacustomer.org',
+          addressId: 12,
+          isActive: true,
+          createDate: '2006-02-15T06:04:36.000Z',
+          lastUpdate: '2006-02-15T12:57:20.000Z'
+        },
+        {
+          id: 9,
+          firstName: 'MARGARET',
+          surname: 'MOORE',
+          email: 'MARGARET.MOORE@sakilacustomer.org',
+          addressId: 13,
+          isActive: true,
+          createDate: undefined,
+          lastUpdate: '2006-02-15T12:57:20.000Z'
+        },
+        {
+          id: 10,
+          firstName: 'DOROTHY',
+          surname: 'TAYLOR',
+          email: 'DOROTHY.TAYLOR@sakilacustomer.org',
+          addressId: 14,
+          isActive: true,
+          createDate: undefined,
+          lastUpdate: '2006-02-15T12:57:20.000Z'
         }
       ]
     },
     sortBy: {
-      column: 'email',
+      column: 'id',
       orderDesc: false
     }
   };
@@ -130,106 +130,211 @@ const customerDetails = {
   addressLastUpdate: '2014-09-26T05:33:20.000Z'
 };
 
-const sortedByEmailDesc = {
+const sortedByIdDesc = {
   customers: [
     {
-      id: 479,
-      firstName: 'ZACHARY',
-      surname: 'HITE',
-      email: 'ZACHARY.HITE@sakilacustomer.org',
-      addressId: 484,
+      id: 599,
+      firstName: 'AUSTIN',
+      surname: 'CINTRON',
+      email: 'AUSTIN.CINTRON@sakilacustomer.org',
+      addressId: 605,
       isActive: true,
       createDate: '2006-02-15T06:04:37.000Z',
       lastUpdate: '2006-02-15T12:57:20.000Z'
     },
     {
-      id: 174,
-      firstName: 'YVONNE',
-      surname: 'WATKINS',
-      email: 'YVONNE.WATKINS@sakilacustomer.org',
-      addressId: 178,
-      isActive: true,
-      createDate: '2006-02-15T06:04:36.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 190,
-      firstName: 'YOLANDA',
-      surname: 'WEAVER',
-      email: 'YOLANDA.WEAVER@sakilacustomer.org',
-      addressId: 194,
-      isActive: true,
-      createDate: '2006-02-15T06:04:36.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 212,
-      firstName: 'WILMA',
-      surname: 'RICHARDS',
-      email: 'WILMA.RICHARDS@sakilacustomer.org',
-      addressId: 216,
-      isActive: true,
-      createDate: '2006-02-15T06:04:36.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 359,
-      firstName: 'WILLIE',
-      surname: 'MARKHAM',
-      email: 'WILLIE.MARKHAM@sakilacustomer.org',
-      addressId: 364,
+      id: 598,
+      firstName: 'WADE',
+      surname: 'DELVALLE',
+      email: 'WADE.DELVALLE@sakilacustomer.org',
+      addressId: 604,
       isActive: true,
       createDate: '2006-02-15T06:04:37.000Z',
       lastUpdate: '2006-02-15T12:57:20.000Z'
     },
     {
-      id: 219,
-      firstName: 'WILLIE',
-      surname: 'HOWELL',
-      email: 'WILLIE.HOWELL@sakilacustomer.org',
-      addressId: 223,
+      id: 597,
+      firstName: 'FREDDIE',
+      surname: 'DUGGAN',
+      email: 'FREDDIE.DUGGAN@sakilacustomer.org',
+      addressId: 603,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 596,
+      firstName: 'ENRIQUE',
+      surname: 'FORSYTHE',
+      email: 'ENRIQUE.FORSYTHE@sakilacustomer.org',
+      addressId: 602,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 595,
+      firstName: 'TERRENCE',
+      surname: 'GUNDERSON',
+      email: 'TERRENCE.GUNDERSON@sakilacustomer.org',
+      addressId: 601,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 594,
+      firstName: 'EDUARDO',
+      surname: 'HIATT',
+      email: 'EDUARDO.HIATT@sakilacustomer.org',
+      addressId: 600,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 593,
+      firstName: 'RENE',
+      surname: 'MCALISTER',
+      email: 'RENE.MCALISTER@sakilacustomer.org',
+      addressId: 599,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 592,
+      firstName: 'TERRANCE',
+      surname: 'ROUSH',
+      email: 'TERRANCE.ROUSH@sakilacustomer.org',
+      addressId: 598,
+      isActive: false,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 591,
+      firstName: 'KENT',
+      surname: 'ARSENAULT',
+      email: 'KENT.ARSENAULT@sakilacustomer.org',
+      addressId: 597,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 590,
+      firstName: 'SETH',
+      surname: 'HANNON',
+      email: 'SETH.HANNON@sakilacustomer.org',
+      addressId: 596,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    }
+  ]
+};
+
+const sortedByFirstName = {
+  customers: [
+    {
+      id: 375,
+      firstName: 'AARON',
+      surname: 'SELBY',
+      email: 'AARON.SELBY@sakilacustomer.org',
+      addressId: 380,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 367,
+      firstName: 'ADAM',
+      surname: 'GOOCH',
+      email: 'ADAM.GOOCH@sakilacustomer.org',
+      addressId: 372,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 525,
+      firstName: 'ADRIAN',
+      surname: 'CLARY',
+      email: 'ADRIAN.CLARY@sakilacustomer.org',
+      addressId: 531,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 217,
+      firstName: 'AGNES',
+      surname: 'BISHOP',
+      email: 'AGNES.BISHOP@sakilacustomer.org',
+      addressId: 221,
       isActive: true,
       createDate: '2006-02-15T06:04:36.000Z',
       lastUpdate: '2006-02-15T12:57:20.000Z'
     },
     {
-      id: 303,
-      firstName: 'WILLIAM',
-      surname: 'SATTERFIELD',
-      email: 'WILLIAM.SATTERFIELD@sakilacustomer.org',
-      addressId: 308,
+      id: 389,
+      firstName: 'ALAN',
+      surname: 'KAHN',
+      email: 'ALAN.KAHN@sakilacustomer.org',
+      addressId: 394,
       isActive: true,
       createDate: '2006-02-15T06:04:37.000Z',
       lastUpdate: '2006-02-15T12:57:20.000Z'
     },
     {
-      id: 578,
-      firstName: 'WILLARD',
-      surname: 'LUMPKIN',
-      email: 'WILLARD.LUMPKIN@sakilacustomer.org',
-      addressId: 584,
+      id: 352,
+      firstName: 'ALBERT',
+      surname: 'CROUSE',
+      email: 'ALBERT.CROUSE@sakilacustomer.org',
+      addressId: 357,
       isActive: true,
       createDate: '2006-02-15T06:04:37.000Z',
       lastUpdate: '2006-02-15T12:57:20.000Z'
     },
     {
-      id: 469,
-      firstName: 'WESLEY',
-      surname: 'BULL',
-      email: 'WESLEY.BULL@sakilacustomer.org',
-      addressId: 474,
+      id: 568,
+      firstName: 'ALBERTO',
+      surname: 'HENNING',
+      email: 'ALBERTO.HENNING@sakilacustomer.org',
+      addressId: 574,
       isActive: true,
       createDate: '2006-02-15T06:04:37.000Z',
       lastUpdate: '2006-02-15T12:57:20.000Z'
     },
     {
-      id: 115,
-      firstName: 'WENDY',
-      surname: 'HARRISON',
-      email: 'WENDY.HARRISON@sakilacustomer.org',
-      addressId: 119,
+      id: 454,
+      firstName: 'ALEX',
+      surname: 'GRESHAM',
+      email: 'ALEX.GRESHAM@sakilacustomer.org',
+      addressId: 459,
       isActive: true,
-      createDate: '2006-02-15T06:04:36.000Z',
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 439,
+      firstName: 'ALEXANDER',
+      surname: 'FENNELL',
+      email: 'ALEXANDER.FENNELL@sakilacustomer.org',
+      addressId: 444,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 423,
+      firstName: 'ALFRED',
+      surname: 'CASILLAS',
+      email: 'ALFRED.CASILLAS@sakilacustomer.org',
+      addressId: 428,
+      isActive: true,
+      createDate: '2006-02-15T06:04:37.000Z',
       lastUpdate: '2006-02-15T12:57:20.000Z'
     }
   ]
@@ -343,11 +448,81 @@ const sortedBySurname = {
 const sortedByIsActive = {
   customers: [
     {
-      id: 16,
-      firstName: 'SANDRA',
-      surname: 'MARTIN',
-      email: 'SANDRA.MARTIN@sakilacustomer.org',
-      addressId: 20,
+      id: 169,
+      firstName: 'ERICA',
+      surname: 'MATTHEWS',
+      email: 'ERICA.MATTHEWS@sakilacustomer.org',
+      addressId: 173,
+      isActive: false,
+      createDate: '2006-02-15T06:04:36.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 446,
+      firstName: 'THEODORE',
+      surname: 'CULP',
+      email: 'THEODORE.CULP@sakilacustomer.org',
+      addressId: 451,
+      isActive: false,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 315,
+      firstName: 'KENNETH',
+      surname: 'GOODEN',
+      email: 'KENNETH.GOODEN@sakilacustomer.org',
+      addressId: 320,
+      isActive: false,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 241,
+      firstName: 'HEIDI',
+      surname: 'LARSON',
+      email: 'HEIDI.LARSON@sakilacustomer.org',
+      addressId: 245,
+      isActive: false,
+      createDate: '2006-02-15T06:04:36.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 406,
+      firstName: 'NATHAN',
+      surname: 'RUNYON',
+      email: 'NATHAN.RUNYON@sakilacustomer.org',
+      addressId: 411,
+      isActive: false,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 124,
+      firstName: 'SHEILA',
+      surname: 'WELLS',
+      email: 'SHEILA.WELLS@sakilacustomer.org',
+      addressId: 128,
+      isActive: false,
+      createDate: '2006-02-15T06:04:36.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 368,
+      firstName: 'HARRY',
+      surname: 'ARCE',
+      email: 'HARRY.ARCE@sakilacustomer.org',
+      addressId: 373,
+      isActive: false,
+      createDate: '2006-02-15T06:04:37.000Z',
+      lastUpdate: '2006-02-15T12:57:20.000Z'
+    },
+    {
+      id: 271,
+      firstName: 'PENNY',
+      surname: 'NEAL',
+      email: 'PENNY.NEAL@sakilacustomer.org',
+      addressId: 276,
       isActive: false,
       createDate: '2006-02-15T06:04:36.000Z',
       lastUpdate: '2006-02-15T12:57:20.000Z'
@@ -363,83 +538,13 @@ const sortedByIsActive = {
       lastUpdate: '2006-02-15T12:57:20.000Z'
     },
     {
-      id: 124,
-      firstName: 'SHEILA',
-      surname: 'WELLS',
-      email: 'SHEILA.WELLS@sakilacustomer.org',
-      addressId: 128,
+      id: 16,
+      firstName: 'SANDRA',
+      surname: 'MARTIN',
+      email: 'SANDRA.MARTIN@sakilacustomer.org',
+      addressId: 20,
       isActive: false,
       createDate: '2006-02-15T06:04:36.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 169,
-      firstName: 'ERICA',
-      surname: 'MATTHEWS',
-      email: 'ERICA.MATTHEWS@sakilacustomer.org',
-      addressId: 173,
-      isActive: false,
-      createDate: '2006-02-15T06:04:36.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 241,
-      firstName: 'HEIDI',
-      surname: 'LARSON',
-      email: 'HEIDI.LARSON@sakilacustomer.org',
-      addressId: 245,
-      isActive: false,
-      createDate: '2006-02-15T06:04:36.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 271,
-      firstName: 'PENNY',
-      surname: 'NEAL',
-      email: 'PENNY.NEAL@sakilacustomer.org',
-      addressId: 276,
-      isActive: false,
-      createDate: '2006-02-15T06:04:36.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 315,
-      firstName: 'KENNETH',
-      surname: 'GOODEN',
-      email: 'KENNETH.GOODEN@sakilacustomer.org',
-      addressId: 320,
-      isActive: false,
-      createDate: '2006-02-15T06:04:37.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 368,
-      firstName: 'HARRY',
-      surname: 'ARCE',
-      email: 'HARRY.ARCE@sakilacustomer.org',
-      addressId: 373,
-      isActive: false,
-      createDate: '2006-02-15T06:04:37.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 406,
-      firstName: 'NATHAN',
-      surname: 'RUNYON',
-      email: 'NATHAN.RUNYON@sakilacustomer.org',
-      addressId: 411,
-      isActive: false,
-      createDate: '2006-02-15T06:04:37.000Z',
-      lastUpdate: '2006-02-15T12:57:20.000Z'
-    },
-    {
-      id: 446,
-      firstName: 'THEODORE',
-      surname: 'CULP',
-      email: 'THEODORE.CULP@sakilacustomer.org',
-      addressId: 451,
-      isActive: false,
-      createDate: '2006-02-15T06:04:37.000Z',
       lastUpdate: '2006-02-15T12:57:20.000Z'
     }
   ]
@@ -553,7 +658,8 @@ const sortByCreateDate = {
 export {
   getInitialState,
   customerDetails,
-  sortedByEmailDesc,
+  sortedByIdDesc,
+  sortedByFirstName,
   sortedBySurname,
   sortedByIsActive,
   sortByCreateDate

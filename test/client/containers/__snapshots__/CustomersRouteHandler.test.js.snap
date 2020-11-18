@@ -19,14 +19,14 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
       class="well row"
     >
       <table
-        class="table table-striped table-condensed table-bordered"
+        class="table table-striped table-bordered"
       >
         <thead>
           <tr>
             <th
-              class="col-xs-3 text-center actionable order-asc"
+              class="col-xs-1 text-center actionable order-asc"
             >
-              Email
+              ID
             </th>
             <th
               class="col-xs-3 text-center actionable"
@@ -39,12 +39,12 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
               Last Name
             </th>
             <th
-              class="col-xs-1 text-center actionable"
+              class="col-xs-2 text-center actionable"
             >
               Active
             </th>
             <th
-              class="col-xs-2 text-center actionable"
+              class="col-xs-3 text-center actionable"
             >
               Joined on
             </th>
@@ -55,44 +55,17 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
             <td
               class="text-center"
             >
-              AARON.SELBY@sakilacustomer.org
+              00001
             </td>
             <td
               class="text-center"
             >
-              AARON
+              MARY
             </td>
             <td
               class="text-center"
             >
-              SELBY
-            </td>
-            <td
-              class="text-center"
-            >
-              YES
-            </td>
-            <td
-              class="text-center"
-            >
-              2006-02-15T06:04:37.000Z
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="text-center"
-            >
-              ADAM.GOOCH@sakilacustomer.org
-            </td>
-            <td
-              class="text-center"
-            >
-              ADAM
-            </td>
-            <td
-              class="text-center"
-            >
-              GOOCH
+              SMITH
             </td>
             <td
               class="text-center"
@@ -102,24 +75,24 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
             <td
               class="text-center"
             >
-              2006-02-15T06:04:37.000Z
+              2006-02-15
             </td>
           </tr>
           <tr>
             <td
               class="text-center"
             >
-              ADRIAN.CLARY@sakilacustomer.org
+              00002
             </td>
             <td
               class="text-center"
             >
-              ADRIAN
+              PATRICIA
             </td>
             <td
               class="text-center"
             >
-              CLARY
+              JOHNSON
             </td>
             <td
               class="text-center"
@@ -129,24 +102,24 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
             <td
               class="text-center"
             >
-              2006-02-15T06:04:37.000Z
+              2006-02-15
             </td>
           </tr>
           <tr>
             <td
               class="text-center"
             >
-              AGNES.BISHOP@sakilacustomer.org
+              00003
             </td>
             <td
               class="text-center"
             >
-              AGNES
+              LINDA
             </td>
             <td
               class="text-center"
             >
-              BISHOP
+              WILLIAMS
             </td>
             <td
               class="text-center"
@@ -156,24 +129,24 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
             <td
               class="text-center"
             >
-              2006-02-15T06:04:36.000Z
+              2006-02-15
             </td>
           </tr>
           <tr>
             <td
               class="text-center"
             >
-              ALAN.KAHN@sakilacustomer.org
+              00004
             </td>
             <td
               class="text-center"
             >
-              ALAN
+              BARBARA
             </td>
             <td
               class="text-center"
             >
-              KAHN
+              JONES
             </td>
             <td
               class="text-center"
@@ -183,24 +156,24 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
             <td
               class="text-center"
             >
-              2006-02-15T06:04:37.000Z
+              2006-02-15
             </td>
           </tr>
           <tr>
             <td
               class="text-center"
             >
-              ALBERT.CROUSE@sakilacustomer.org
+              00005
             </td>
             <td
               class="text-center"
             >
-              ALBERT
+              ELIZABETH
             </td>
             <td
               class="text-center"
             >
-              CROUSE
+              BROWN
             </td>
             <td
               class="text-center"
@@ -210,24 +183,24 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
             <td
               class="text-center"
             >
-              2006-02-15T06:04:37.000Z
+              2006-02-15
             </td>
           </tr>
           <tr>
             <td
               class="text-center"
             >
-              ALBERTO.HENNING@sakilacustomer.org
+              00006
             </td>
             <td
               class="text-center"
             >
-              ALBERTO
+              JENNIFER
             </td>
             <td
               class="text-center"
             >
-              HENNING
+              DAVIS
             </td>
             <td
               class="text-center"
@@ -237,51 +210,24 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
             <td
               class="text-center"
             >
-              2006-02-15T06:04:37.000Z
+              2006-02-15
             </td>
           </tr>
           <tr>
             <td
               class="text-center"
             >
-              ALEX.GRESHAM@sakilacustomer.org
+              00007
             </td>
             <td
               class="text-center"
             >
-              ALEX
+              MARIA
             </td>
             <td
               class="text-center"
             >
-              GRESHAM
-            </td>
-            <td
-              class="text-center"
-            >
-              NO
-            </td>
-            <td
-              class="text-center"
-            >
-              2006-02-15T06:04:37.000Z
-            </td>
-          </tr>
-          <tr>
-            <td
-              class="text-center"
-            >
-              ALEXANDER.FENNELL@sakilacustomer.org
-            </td>
-            <td
-              class="text-center"
-            >
-              ALEXANDER
-            </td>
-            <td
-              class="text-center"
-            >
-              FENNELL
+              MILLER
             </td>
             <td
               class="text-center"
@@ -291,24 +237,24 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
             <td
               class="text-center"
             >
-              2006-02-15T06:04:37.000Z
+              2006-02-15
             </td>
           </tr>
           <tr>
             <td
               class="text-center"
             >
-              ALFRED.CASILLAS@sakilacustomer.org
+              00008
             </td>
             <td
               class="text-center"
             >
-              ALFRED
+              SUSAN
             </td>
             <td
               class="text-center"
             >
-              CASILLAS
+              WILSON
             </td>
             <td
               class="text-center"
@@ -318,8 +264,58 @@ exports[`CustomersRouteHandler tests Renders 1`] = `
             <td
               class="text-center"
             >
-              2006-02-15T06:04:37.000Z
+              2006-02-15
             </td>
+          </tr>
+          <tr>
+            <td
+              class="text-center"
+            >
+              00009
+            </td>
+            <td
+              class="text-center"
+            >
+              MARGARET
+            </td>
+            <td
+              class="text-center"
+            >
+              MOORE
+            </td>
+            <td
+              class="text-center"
+            >
+              YES
+            </td>
+            <td
+              class="text-center"
+            />
+          </tr>
+          <tr>
+            <td
+              class="text-center"
+            >
+              00010
+            </td>
+            <td
+              class="text-center"
+            >
+              DOROTHY
+            </td>
+            <td
+              class="text-center"
+            >
+              TAYLOR
+            </td>
+            <td
+              class="text-center"
+            >
+              YES
+            </td>
+            <td
+              class="text-center"
+            />
           </tr>
         </tbody>
       </table>

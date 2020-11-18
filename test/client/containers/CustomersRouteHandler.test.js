@@ -7,7 +7,8 @@ import {
   sortedBySurname,
   sortedByIsActive,
   sortByCreateDate,
-  sortedByEmailDesc
+  sortedByIdDesc,
+  sortedByFirstName
 } from '../utils/customerDataMocks';
 
 jest.mock('../../../src/client/services/data');
@@ -40,7 +41,7 @@ describe('CustomersRouteHandler tests', () => {
     const { getByText, queryByText } = render(
       <CustomersRouteHandler initialState={initialState} />
     );
-    expect(queryByText('SELBY')).not.toBeNull();
+    expect(queryByText('SMITH')).not.toBeNull();
 
     const surnameHeader = getByText('Last Name');
     fireEvent.click(surnameHeader);
@@ -48,7 +49,7 @@ describe('CustomersRouteHandler tests', () => {
     // Wait for AJAX call to be complete
     await waitFor(() => {});
 
-    expect(queryByText('SELBY')).toBeNull();
+    expect(queryByText('SMITH')).toBeNull();
     expect(queryByText('ABNEY')).not.toBeNull();
   });
 
@@ -60,7 +61,7 @@ describe('CustomersRouteHandler tests', () => {
     const { getByText, queryByText } = render(
       <CustomersRouteHandler initialState={initialState} />
     );
-    expect(queryByText('SELBY')).not.toBeNull();
+    expect(queryByText('SMITH')).not.toBeNull();
 
     const surnameHeader = getByText('Last Name');
     fireEvent.click(surnameHeader);
@@ -68,7 +69,7 @@ describe('CustomersRouteHandler tests', () => {
     // Wait for AJAX call to be complete
     await waitFor(() => {});
 
-    expect(queryByText('SELBY')).not.toBeNull();
+    expect(queryByText('SMITH')).not.toBeNull();
     expect(queryByText('ABNEY')).toBeNull();
   });
 
@@ -80,7 +81,7 @@ describe('CustomersRouteHandler tests', () => {
     const { getByText, queryByText } = render(
       <CustomersRouteHandler initialState={initialState} />
     );
-    expect(queryByText('AARON')).not.toBeNull();
+    expect(queryByText('MARY')).not.toBeNull();
 
     const surnameHeader = getByText('Active');
     fireEvent.click(surnameHeader);
@@ -88,8 +89,8 @@ describe('CustomersRouteHandler tests', () => {
     // Wait for AJAX call to be complete
     await waitFor(() => {});
 
-    expect(queryByText('AARON')).toBeNull();
-    expect(queryByText('SANDRA')).not.toBeNull();
+    expect(queryByText('MARY')).toBeNull();
+    expect(queryByText('ERICA')).not.toBeNull();
   });
 
   test('Sorts by createDate', async () => {
@@ -100,7 +101,7 @@ describe('CustomersRouteHandler tests', () => {
     const { getByText, queryByText } = render(
       <CustomersRouteHandler initialState={initialState} />
     );
-    expect(queryByText('AARON')).not.toBeNull();
+    expect(queryByText('MARY')).not.toBeNull();
 
     const surnameHeader = getByText('Joined on');
     fireEvent.click(surnameHeader);
@@ -108,35 +109,39 @@ describe('CustomersRouteHandler tests', () => {
     // Wait for AJAX call to be complete
     await waitFor(() => {});
 
-    expect(queryByText('AARON')).toBeNull();
+    // Same payload as default (sorted by id)
     expect(queryByText('MARY')).not.toBeNull();
   });
 
-  test('Sorts by email', async () => {
+  test('Sorts by id', async () => {
     mockService.getCustomers.mockImplementation(async () => {
-      return sortedByEmailDesc;
+      return sortedByIdDesc;
     });
 
     const { getByText, queryByText } = render(
       <CustomersRouteHandler initialState={initialState} />
     );
-    expect(queryByText('AARON')).not.toBeNull();
+    expect(queryByText('MARY')).not.toBeNull();
 
-    const surnameHeader = getByText('Email');
+    const surnameHeader = getByText('ID');
     fireEvent.click(surnameHeader);
 
     // Wait for AJAX call to be complete
     await waitFor(() => {});
 
-    expect(queryByText('AARON')).toBeNull();
-    expect(queryByText('ZACHARY')).not.toBeNull();
+    expect(queryByText('MARY')).toBeNull();
+    expect(queryByText('AUSTIN')).not.toBeNull();
   });
 
   test('Sorts by firstName', async () => {
+    mockService.getCustomers.mockImplementation(async () => {
+      return sortedByFirstName;
+    });
+
     const { getByText, queryByText } = render(
       <CustomersRouteHandler initialState={initialState} />
     );
-    expect(queryByText('AARON')).not.toBeNull();
+    expect(queryByText('MARY')).not.toBeNull();
 
     const surnameHeader = getByText('First Name');
     fireEvent.click(surnameHeader);
@@ -145,6 +150,7 @@ describe('CustomersRouteHandler tests', () => {
     await waitFor(() => {});
 
     // Result is same as initial state
+    expect(queryByText('MARY')).toBeNull();
     expect(queryByText('AARON')).not.toBeNull();
   });
 
@@ -158,6 +164,6 @@ describe('CustomersRouteHandler tests', () => {
   test('Renders empty data by default', () => {
     const { container, queryByText } = render(<CustomersRouteHandler />);
     expect(container.firstChild).not.toBeNull();
-    expect(queryByText('AARON')).toBeNull();
+    expect(queryByText('MARY')).toBeNull();
   });
 });

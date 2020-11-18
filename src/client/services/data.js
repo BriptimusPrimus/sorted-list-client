@@ -56,7 +56,7 @@ const getEmployees = function getEmployees(options = {}) {
 
 const getCustomers = function getCustomers(options = {}) {
   const sortBy = options.sortBy || {
-    column: 'email'
+    column: 'id'
   };
 
   const params = {

@@ -19,10 +19,10 @@ const TableHeader = ({ sortBy, onSetSortColumn }) => {
     <thead>
       <tr>
         <th
-          className={`col-xs-3 ${setColumnSortClass('email')}`}
-          onClick={() => onHeaderClick('email')}
+          className={`col-xs-1 ${setColumnSortClass('id')}`}
+          onClick={() => onHeaderClick('id')}
         >
-          Email
+          ID
         </th>
         <th
           className={`col-xs-3 ${setColumnSortClass('firstName')}`}
@@ -37,13 +37,13 @@ const TableHeader = ({ sortBy, onSetSortColumn }) => {
           Last Name
         </th>
         <th
-          className={`col-xs-1 ${setColumnSortClass('isActive')}`}
+          className={`col-xs-2 ${setColumnSortClass('isActive')}`}
           onClick={() => onHeaderClick('isActive')}
         >
           Active
         </th>
         <th
-          className={`col-xs-2 ${setColumnSortClass('createDate')}`}
+          className={`col-xs-3 ${setColumnSortClass('createDate')}`}
           onClick={() => onHeaderClick('createDate')}
         >
           Joined on
