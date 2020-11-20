@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const formatId = id => `00000${id}`.slice(-5);
 
@@ -8,7 +9,11 @@ const formatDate = date => (date && date.slice(0, 10)) || '';
 const TableRow = ({ record }) => {
   return (
     <tr>
-      <td className="text-center">{formatId(record.id)}</td>
+      <td className="text-center">
+        <Link to={`/customer/${record.id}`} className="details-link">
+          {formatId(record.id)}
+        </Link>
+      </td>
       <td className="text-center">{record.firstName}</td>
       <td className="text-center">{record.surname}</td>
       <td className="text-center">{record.isActive ? 'YES' : 'NO'}</td>

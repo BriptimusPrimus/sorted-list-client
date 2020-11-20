@@ -11,6 +11,11 @@ import {
   sortedByStatus
 } from '../utils/dataMocks';
 
+jest.mock('react-router-dom', () => {
+  return {
+    useParams: () => ({})
+  };
+});
 jest.mock('../../../src/client/services/data');
 
 describe('ListRouteHandler tests', () => {

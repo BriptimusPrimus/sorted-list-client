@@ -15,7 +15,7 @@ const routes = [
   },
   {
     key: 'customer',
-    path: '/customer',
+    path: '/customer/:customerId',
     component: CustomerDetailsRouteHandler
   }
 ];

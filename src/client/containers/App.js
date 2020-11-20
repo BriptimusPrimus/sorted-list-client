@@ -11,7 +11,7 @@ const resolveState = function resolveState(initialState) {
       customerDetails: {}
     },
     sortBy: {
-      column: 'codeNumber',
+      column: 'id',
       orderDesc: false
     },
     customerId: 0

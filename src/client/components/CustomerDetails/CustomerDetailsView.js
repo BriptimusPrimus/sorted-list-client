@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../css/app.css';
 import DataTable from './DataTable';
@@ -9,6 +10,7 @@ const CustomersDetailsView = ({ customer }) => {
     <div className="panel panel-default row">
       <div className="col-xs-0 col-sm-1 col-md-2" />
       <section className="col-xs-12 col-sm-10 col-md-8">
+        <Link to="/customers">Go back to list</Link>
         <h2 className="text-primary text-center">Customer Details</h2>
         <div className="well row">
           <DataTable data={customer} />

@@ -11,6 +11,14 @@ import {
   sortedByFirstName
 } from '../utils/customerDataMocks';
 
+jest.mock('react-router-dom', () => {
+  return {
+    useParams: () => ({}),
+    Link: ({ children }) => {
+      return children;
+    }
+  };
+});
 jest.mock('../../../src/client/services/data');
 
 describe('CustomersRouteHandler tests', () => {

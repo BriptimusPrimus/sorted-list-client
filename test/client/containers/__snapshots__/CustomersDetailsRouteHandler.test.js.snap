@@ -10,6 +10,7 @@ exports[`CustomerDetailsRouteHandler tests Renders 1`] = `
   <section
     class="col-xs-12 col-sm-10 col-md-8"
   >
+    Go back to list
     <h2
       class="text-primary text-center"
     >

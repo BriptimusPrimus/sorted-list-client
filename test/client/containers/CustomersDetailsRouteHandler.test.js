@@ -4,6 +4,16 @@ import CustomerDetailsRouteHandler from '../../../src/client/containers/Customer
 import * as mockService from '../../../src/client/services/data';
 import { customerDetails } from '../utils/customerDataMocks';
 
+jest.mock('react-router-dom', () => {
+  return {
+    useParams: () => ({
+      customerId: 42
+    }),
+    Link: ({ children }) => {
+      return children;
+    }
+  };
+});
 jest.mock('../../../src/client/services/data');
 
 const getInitialState = () => ({

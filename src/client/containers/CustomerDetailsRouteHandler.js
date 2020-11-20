@@ -11,7 +11,7 @@ const CustomerDetailsWithUniversalLoad = withUniversalLoad(
     dataSource: getCustomerDetails,
     dataSourceParams: {
       customerId: {
-        inState: true
+        inParams: true
       }
     },
     successAction: receiveData,
