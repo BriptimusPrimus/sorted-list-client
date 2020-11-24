@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import reducer from '../reducers';
 
 const withUniversalLoad = function withUniversalLoad(
@@ -7,13 +8,22 @@ const withUniversalLoad = function withUniversalLoad(
 ) {
   const withUniversalLoadComponent = ({ initialState }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const params = useParams();
 
-    const fetchOpts = Object.keys(dataSourceParams).reduce((res, key) => {
+    const fetchOpts = Object.keys(dataSourceParams).reduce((acum, curr) => {
+      const resolveValue = key => {
+        const dataSourceParam = dataSourceParams[key];
+        if (dataSourceParam.inState) {
+          return state[key];
+        }
+        if (dataSourceParam.inParams) {
+          return params[key];
+        }
+        return dataSourceParam.value;
+      };
       return {
-        ...res,
-        [key]: dataSourceParams[key].inState
-          ? state[key]
-          : dataSourceParams[key].value
+        ...acum,
+        [curr]: resolveValue(curr)
       };
     }, {});
 

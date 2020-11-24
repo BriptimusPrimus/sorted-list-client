@@ -1,12 +1,25 @@
 {
-  "database": {
-    "module": "implementations/employeesdb",
-    "connectionOptions": {
-      "host": "localhost",
-      "user": "myusr",
-      "password": "123456",
-      "database": "sorted_list"
-    },
-    "timeout": 5000
+  "dal": {
+    "module": "implementations/remotedata",
+    "databases": {
+      "employees": {
+        "connectionOptions": {
+          "host": "localhost",
+          "user": "myusr",
+          "password": "123456",
+          "database": "sorted_list"
+        },
+        "timeout": 5000
+      },
+      "videostore": {
+        "connectionOptions": {
+          "host": "localhost",
+          "user": "myusr",
+          "password": "123456",
+          "database": "sakila"
+        },
+        "timeout": 5000
+      }
+    }
   }
 }

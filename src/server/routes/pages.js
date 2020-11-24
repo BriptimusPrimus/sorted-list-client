@@ -9,7 +9,7 @@ const ssrComponentTree = require('../../../dist/server').default;
 
 const router = express.Router();
 
-async function renderMarkup(html, initialState) {
+const renderMarkup = async function renderMarkup(html, initialState) {
   return new Promise((resolve, reject) => {
     const indexFile = path.join(__dirname, '../../../dist/public/index.html');
     fs.readFile(indexFile, 'utf8', (err, data) => {
@@ -30,18 +30,15 @@ async function renderMarkup(html, initialState) {
       resolve(markup);
     });
   });
-}
+};
 
 /* Server side rendered page. */
-router.get('/list', async function handleRender(req, res, next) {
-  const { sort, order } = req.query;
-  const loadDataParams = {
-    sortBy: {
-      column: sort || 'codeNumber',
-      orderDesc: order === 'DESC'
-    }
-  };
-
+const handleRender = async function handleRender({
+  req,
+  res,
+  next,
+  loadDataParams
+}) {
   try {
     const { html, initialState } = await ssrComponentTree({
       url: req.url,
@@ -53,6 +50,33 @@ router.get('/list', async function handleRender(req, res, next) {
   } catch (err) {
     next(err);
   }
+};
+
+router.get('/list', function renderList(req, res, next) {
+  const { sort, order } = req.query;
+  const loadDataParams = {
+    sortBy: {
+      column: sort || 'codeNumber',
+      orderDesc: order === 'DESC'
+    }
+  };
+  handleRender({ req, res, next, loadDataParams });
+});
+
+router.get('/customers', function renderCustomers(req, res, next) {
+  const { sort, order } = req.query;
+  const loadDataParams = {
+    sortBy: {
+      column: sort || 'id',
+      orderDesc: order === 'DESC'
+    }
+  };
+  handleRender({ req, res, next, loadDataParams });
+});
+
+router.get('/customer/:id', function renderCustomerDetails(req, res, next) {
+  const { id } = req.params;
+  handleRender({ req, res, next, loadDataParams: { customerId: id } });
 });
 
 module.exports = router;

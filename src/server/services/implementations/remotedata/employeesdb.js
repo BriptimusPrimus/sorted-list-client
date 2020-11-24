@@ -1,7 +1,8 @@
 /*
  * Data Access Service Implementation
  */
-const { makeQuery } = require('./dbutils');
+const conf = require('../../../../../config').dal.databases.employees;
+const { makeQuery } = require('./dbutils')(conf);
 
 const mapFields = function mapFields() {
   return {

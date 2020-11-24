@@ -6,12 +6,15 @@ import routes from '../routes';
 const resolveState = function resolveState(initialState) {
   const defaultState = {
     data: {
-      list: []
+      list: [],
+      customers: [],
+      customerDetails: {}
     },
     sortBy: {
-      column: 'codeNumber',
+      column: 'id',
       orderDesc: false
-    }
+    },
+    customerId: 0
   };
   return {
     ...defaultState,

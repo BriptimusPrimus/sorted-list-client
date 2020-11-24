@@ -291,7 +291,7 @@ const sortedBySurname = {
   ]
 };
 
-const sortedByCodeNumberAsc = {
+const sortedByCodeNumberDesc = {
   list: [
     {
       id: 42850,
@@ -580,7 +580,7 @@ export {
   getInitialState,
   sortedByName,
   sortedBySurname,
-  sortedByCodeNumberAsc,
+  sortedByCodeNumberDesc,
   sortedByRFC,
   sortedByStatus
 };

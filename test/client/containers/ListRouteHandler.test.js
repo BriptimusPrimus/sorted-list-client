@@ -6,11 +6,16 @@ import {
   getInitialState,
   sortedByName,
   sortedBySurname,
-  sortedByCodeNumberAsc,
+  sortedByCodeNumberDesc,
   sortedByRFC,
   sortedByStatus
 } from '../utils/dataMocks';
 
+jest.mock('react-router-dom', () => {
+  return {
+    useParams: () => ({})
+  };
+});
 jest.mock('../../../src/client/services/data');
 
 describe('ListRouteHandler tests', () => {
@@ -95,7 +100,7 @@ describe('ListRouteHandler tests', () => {
 
   test('Sorts by codeNumber', async () => {
     mockService.getEmployees.mockImplementation(async () => {
-      return sortedByCodeNumberAsc;
+      return sortedByCodeNumberDesc;
     });
 
     const { getByText, queryByText } = render(

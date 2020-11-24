@@ -1,7 +1,8 @@
+/* eslint-disable */
 const mysql = require('mysql');
 const fs = require('fs');
 
-// GRANT ALL on sorted_list.* to 'myusr'@'localhost' identified by '123456';
+// GRANT ALL on sorted_list.* TO 'myusr'@'localhost' identified by '123456';
 const conf = {
   db: {
     connectionOptions: {

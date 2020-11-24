@@ -14,6 +14,13 @@ const getRequest = async function getRequest(endpoint) {
   };
 
   const response = await fetch(endpoint, requestConf);
+
+  if (response.status === 404) {
+    return {
+      notFound: true
+    };
+  }
+
   if (response.status !== 200) {
     return {
       error: 'Service Failure',
@@ -47,4 +54,30 @@ const getEmployees = function getEmployees(options = {}) {
   return getRequest(endpoint);
 };
 
-export { getEmployees };
+const getCustomers = function getCustomers(options = {}) {
+  const sortBy = options.sortBy || {
+    column: 'id'
+  };
+
+  const params = {
+    count: options.count || config.data_service.defaulCount,
+    sort: sortBy.column,
+    order: sortBy.orderDesc ? 'DESC' : 'ASC'
+  };
+
+  const endpoint = `${
+    apiEndpoint + config.data_service.api.customers_data
+  }?${querystring.stringify(params)}`;
+
+  return getRequest(endpoint);
+};
+
+const getCustomerDetails = function getCustomerDetails({ customerId } = {}) {
+  const endpoint = `${
+    apiEndpoint + config.data_service.api.customer_details
+  }/${customerId}`;
+
+  return getRequest(endpoint);
+};
+
+export { getEmployees, getCustomers, getCustomerDetails };

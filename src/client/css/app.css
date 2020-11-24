@@ -29,3 +29,14 @@
   top: -10px;
   left: 10px;
 }
+.details-link {
+  color: #333;
+  text-decoration: none;
+}
+.details-link:hover {
+  color: #333;
+  text-decoration: none;
+}
+.details-key {
+  font-weight: bold;
+}

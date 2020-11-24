@@ -57,7 +57,7 @@ ListRouteHandler.defaultProps = {
       list: []
     },
     sortBy: {
-      column: 'code',
+      column: 'codeNumber',
       orderDesc: false
     }
   }

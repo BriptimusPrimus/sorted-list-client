@@ -1,5 +1,8 @@
-const { getEmployees } = require('./employees');
-const { getCustomer, getCustomers } = require('./customers');
+/*
+ * Data Access Service Implementation
+ */
+const { getEmployees } = require('./employeesdb');
+const { getCustomer, getCustomers } = require('./customersdb');
 
 // This object implements the bridge interface:
 // interface: {
