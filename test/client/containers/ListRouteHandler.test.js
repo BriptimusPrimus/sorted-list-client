@@ -13,7 +13,8 @@ import {
 
 jest.mock('react-router-dom', () => {
   return {
-    useParams: () => ({})
+    useParams: () => ({}),
+    useLocation: () => ({})
   };
 });
 jest.mock('../../../src/client/services/data');

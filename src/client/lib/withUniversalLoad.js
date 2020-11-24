@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import reducer from '../reducers';
 
 const withUniversalLoad = function withUniversalLoad(
@@ -9,6 +9,7 @@ const withUniversalLoad = function withUniversalLoad(
   const withUniversalLoadComponent = ({ initialState }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const params = useParams();
+    const query = new URLSearchParams(useLocation().search);
 
     const fetchOpts = Object.keys(dataSourceParams).reduce((acum, curr) => {
       const resolveValue = key => {
@@ -18,6 +19,9 @@ const withUniversalLoad = function withUniversalLoad(
         }
         if (dataSourceParam.inParams) {
           return params[key];
+        }
+        if (dataSourceParam.inQuery) {
+          return query.get(dataSourceParam.paramName);
         }
         return dataSourceParam.value;
       };

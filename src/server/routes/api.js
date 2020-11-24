@@ -20,6 +20,8 @@ router.get('/customer/:id', customersController.getCustomerDetails);
 
 router.get('/customers', customersController.getCustomers);
 
+router.get('/details', customersController.getCustomerDetails);
+
 router.get('/employees', employeesController.getList);
 
 module.exports = router;

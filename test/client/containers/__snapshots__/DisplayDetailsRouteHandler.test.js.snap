@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DisplayDetailsRouteHandler tests Renders 1`] = `
+<div
+  class="panel panel-default row"
+>
+  <div
+    class="col-xs-0 col-sm-1 col-md-2"
+  />
+  <section
+    class="col-xs-12 col-sm-10 col-md-8"
+  >
+    Go back to list
+    <h2
+      class="text-primary text-center"
+    >
+      Customer Details
+    </h2>
+    <div
+      class="well row"
+    >
+      <table
+        class="table table-striped"
+      >
+        <tbody>
+          <tr>
+            <td
+              class="details-key"
+            >
+              Name:
+            </td>
+            <td>
+              CAROLYN
+               
+              PEREZ
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="details-key"
+            >
+              Email:
+            </td>
+            <td>
+              CAROLYN.PEREZ@sakilacustomer.org
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="details-key"
+            >
+              Phone number:
+            </td>
+            <td>
+              471675840679
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="details-key"
+            >
+              Address:
+            </td>
+            <td>
+              1632 Bislig Avenue
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="details-key"
+            >
+              City:
+            </td>
+            <td>
+              Pak Kret
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="details-key"
+            >
+              District:
+            </td>
+            <td>
+              Nonthaburi
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="details-key"
+            >
+              Country:
+            </td>
+            <td>
+              Thailand
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="details-key"
+            >
+              Postal code:
+            </td>
+            <td>
+              61117
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <div
+    class="col-xs-0 col-sm-1 col-md-2"
+  />
+</div>
+`;

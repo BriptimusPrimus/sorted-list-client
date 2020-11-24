@@ -79,4 +79,9 @@ router.get('/customer/:id', function renderCustomerDetails(req, res, next) {
   handleRender({ req, res, next, loadDataParams: { customerId: id } });
 });
 
+router.get('/details', function renderCustomerDetails(req, res, next) {
+  const { id } = req.query;
+  handleRender({ req, res, next, loadDataParams: { customerId: id } });
+});
+
 module.exports = router;
