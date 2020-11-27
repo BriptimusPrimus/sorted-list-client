@@ -11,7 +11,11 @@ const router = express.Router();
 
 const renderMarkup = async function renderMarkup(html, initialState) {
   return new Promise((resolve, reject) => {
-    const indexFile = path.join(__dirname, '../../../dist/public/index.html');
+    const pageFilePath =
+      process.env.NODE_ENV === 'production'
+        ? '../../../dist/public/index.html'
+        : '../../../templates/dev.html';
+    const indexFile = path.join(__dirname, pageFilePath);
     fs.readFile(indexFile, 'utf8', (err, data) => {
       if (err) {
         console.error('Error reading HTML template:', err);

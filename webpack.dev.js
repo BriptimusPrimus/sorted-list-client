@@ -1,4 +1,4 @@
-const path = require('path');
+/* eslint-disable import/no-extraneous-dependencies */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const developmentConfig = {
@@ -9,11 +9,12 @@ const developmentConfig = {
     pathinfo: false
   },
   devServer: {
-    contentBase: './dist',
+    publicPath: '/static/',
     proxy: {
-      '*': 'http://127.0.0.1:' + (process.env.PORT || 3000)
+      '*': `http://127.0.0.1:${process.env.PORT || 3000}`
     },
     host: '127.0.0.1',
+    openPage: 'customers',
     open: true
   },
   plugins: [

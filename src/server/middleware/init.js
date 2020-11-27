@@ -13,10 +13,6 @@ module.exports = function init(app) {
     '/static',
     express.static(path.join(__dirname, '../../../dist/public'))
   );
-  app.use(
-    '/customer/static',
-    express.static(path.join(__dirname, '../../../dist/public'))
-  );
 
   app.use(morganLogger('dev'));
   // parse application/json
@@ -57,7 +53,7 @@ module.exports = function init(app) {
   if (app.get('env') === 'development' || app.get('env') === 'test') {
     // eslint-disable-next-line no-unused-vars
     app.use(function handleErrorDev(err, req, res, next) {
-      console.error('########## ERROR ##########', err);
+      console.error('########## DEV ERROR ##########', err);
       console.error(err.stack);
 
       res.status(err.status || 500);
