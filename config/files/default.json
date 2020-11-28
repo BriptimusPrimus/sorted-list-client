@@ -11,5 +11,29 @@
       "display_details": "details"
     },
     "defaulCount": 10
-  }
+  },
+  "dal": {
+    "module": "implementations/remotedata",
+    "databases": {
+      "employees": {
+        "connectionOptions": {
+          "host": "localhost",
+          "user": "myusr",
+          "password": "123456",
+          "database": "sorted_list"
+        },
+        "timeout": 5000
+      },
+      "videostore": {
+        "connectionOptions": {
+          "host": "localhost",
+          "user": "myusr",
+          "password": "123456",
+          "database": "sakila"
+        },
+        "timeout": 5000
+      }
+    }
+  },
+  "mainPage": "dist/public/index.html"
 }

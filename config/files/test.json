@@ -15,5 +15,6 @@
         "mockResponseDelay": 1000
       }
     }
-  }
+  },
+  "mainPage": "templates/dev.html"
 }
