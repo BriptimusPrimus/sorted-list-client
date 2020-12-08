@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node index.js",
+    "start:unsafe": "NODE_ENV=unsafe node index.js",
     "build": "npm run build:client && npm run build:server",
     "build:client": "webpack --env production",
     "build:server": "webpack --config webpack.server.js",
