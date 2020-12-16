@@ -14,6 +14,7 @@ import {
 jest.mock('react-router-dom', () => {
   return {
     useParams: () => ({}),
+    useLocation: () => ({}),
     Link: ({ children }) => {
       return children;
     }

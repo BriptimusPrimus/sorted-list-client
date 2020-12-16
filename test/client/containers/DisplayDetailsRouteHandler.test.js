@@ -1,15 +1,15 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import CustomerDetailsRouteHandler from '../../../src/client/containers/CustomerDetailsRouteHandler';
+import DisplayDetailsRouteHandler from '../../../src/client/containers/DisplayDetailsRouteHandler';
 import * as mockService from '../../../src/client/services/data';
 import { customerDetails } from '../utils/customerDataMocks';
 
 jest.mock('react-router-dom', () => {
   return {
-    useParams: () => ({
-      customerId: 42
+    useParams: () => ({}),
+    useLocation: () => ({
+      search: () => '?id=42'
     }),
-    useLocation: () => ({}),
     Link: ({ children }) => {
       return children;
     }
@@ -24,12 +24,12 @@ const getInitialState = () => ({
   }
 });
 
-describe('CustomerDetailsRouteHandler tests', () => {
+describe('DisplayDetailsRouteHandler tests', () => {
   const initialState = getInitialState();
 
   beforeEach(() => {
     jest.clearAllMocks();
-    mockService.getCustomerDetails.mockImplementation(async () => {
+    mockService.getDisplayDetails.mockImplementation(async () => {
       return initialState.data;
     });
   });
@@ -38,7 +38,7 @@ describe('CustomerDetailsRouteHandler tests', () => {
 
   test('Renders', () => {
     const { container } = render(
-      <CustomerDetailsRouteHandler initialState={initialState} />
+      <DisplayDetailsRouteHandler initialState={initialState} />
     );
     expect(container.firstChild).not.toBeNull();
     expect(container.firstChild).toMatchSnapshot();
@@ -52,13 +52,13 @@ describe('CustomerDetailsRouteHandler tests', () => {
       }
     };
     const { queryByText } = render(
-      <CustomerDetailsRouteHandler initialState={localState} />
+      <DisplayDetailsRouteHandler initialState={localState} />
     );
     expect(queryByText('Data not found')).not.toBeNull();
   });
 
   test('Static load data', async () => {
-    const result = await CustomerDetailsRouteHandler.loadData();
+    const result = await DisplayDetailsRouteHandler.loadData();
     expect(result).toEqual({
       data: initialState.data
     });

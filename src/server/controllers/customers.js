@@ -30,7 +30,7 @@ const getCustomers = async function getCustomers(req, res, next) {
 };
 
 const getCustomerDetails = async function getCustomerDetails(req, res, next) {
-  const { id } = req.params;
+  const id = req.params.id || req.query.id;
   try {
     const response = await dataAccess.getCustomerDetails(id);
     if (response.success && response.data) {
