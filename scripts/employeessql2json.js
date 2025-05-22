@@ -8,7 +8,7 @@ const conf = {
     connectionOptions: {
       host: 'localhost',
       user: 'myusr',
-      password: '123456',
+      password: '12345678',
       database: 'sorted_list'
     },
     timeout: 20000

@@ -9,7 +9,7 @@ const conf = {
     connectionOptions: {
       host: 'localhost',
       user: 'myusr',
-      password: '123456',
+      password: '12345678',
       database: 'sakila'
     },
     timeout: 20000
