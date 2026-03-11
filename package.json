@@ -32,11 +32,11 @@
   },
   "homepage": "https://github.com/BriptimusPrimus/sorted-list-client#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.20.4",
     "bootstrap": "^3.3.7",
     "cookie-parser": "^1.4.3",
     "debug": "^2.2.0",
-    "express": "^4.17.3",
+    "express": "^4.22.1",
     "isomorphic-fetch": "^3.0.0",
     "morgan": "^1.7.0",
     "mysql": "^2.18.1",
